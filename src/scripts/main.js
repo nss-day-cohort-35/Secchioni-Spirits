@@ -1,3 +1,6 @@
+import createUser from "./auth/eventListeners"
+import API from "./auth/data"
+
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
@@ -10,22 +13,47 @@ const message = "Welcome to Bangazoon, please fillout the form"
 document.querySelector("#container").innerHTML = `<h1>${message}</h1>
 <form>
 <fieldset>
-<label for="username">Username</label>
+<label for="name">First and Last name:</label>
+<input type="text" id="name" placeholder="please enter your first and last name">
+<label for="username">Username:</label>
 <input type="text" id="userName" placeholder="please enter username or email">
-<label for="password">Password</label>
-<input type="password" id="password-1" placeholder="please enter a valid password">
-<label for="password">Re-Enter Password</label>
-<input type="password" id="password-2" placeholder="please re-enter your password">
-<button class="submit" type="button">Register Now</button>
+<label for="password">Password:</label>
+<input type="password" id="password-1" placeholder="please enter a valid password" autocomplete="on">
+<label for="password">Re-Enter Password:</label>
+<input type="password" id="password-2" placeholder="please re-enter your password" autocomplete="on">
+<button class="submit" type="button">Register Now!</button>
 </fieldset>
 </form>
 `
 
-console.log(message)
+
 //This is the submit button event listener that checks for passwords//
-document.querySelector (".submit").addEventListener("click", event =>  {
+document.querySelector(".submit").addEventListener("click", event => {
+    // we are checking the value of the name label
+    let name = document.querySelector("#name").value
+    // we are checking the value of the username label
+    let username = document.querySelector("#userName").value;
+    // we are checking the value of password 1
     let password1 = document.querySelector("#password-1").value;
+    // we are checking the value of password 2
     let password2 = document.querySelector("#password-2").value;
-    console.log(password1)
-    console.log(password2)
-    })
+    // starting the if statement
+    if (password1 !== password2) {
+        // if pass 1 isn't equal to pass 2
+        alert("Please use the same password")
+        // if pass 1 or pass 2 are empty
+    } else if (password1 === "" || password2 === "") {
+        alert("Please fill the Password Form")
+        // if username is empty
+    } else if (username === "") {
+        alert("Please enter an Username")
+    } else if (name === "") {
+        // if name is empty
+        alert("Please enter your Name")
+    } else {
+        // newUser will crete an object with the name, username, password1 values
+        let newUser = createUser(name, username, password1);
+        // API has a function that will create a new object, in this case a new user. this API function is imported from data.js file that is doing a fetch call to local server//
+        API.createUser(newUser)
+    }
+})
