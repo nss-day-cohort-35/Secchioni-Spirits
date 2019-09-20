@@ -1,5 +1,5 @@
 const factoryHTML = {
-    landingPageHTML(){
+    landingPageHTML() {
         return `
         <div id="welcome">
         <div id="logo"></div>
@@ -10,7 +10,7 @@ const factoryHTML = {
         </div>
       </div>`
     },
-    registerHTML(){
+    registerHTML() {
         return `
         <form class="registration">
         <fieldset>
@@ -22,12 +22,12 @@ const factoryHTML = {
         <input type="password" id="password-1" placeholder="please enter a valid password" autocomplete="on">
         <label for="password">Re-Enter Password:</label>
         <input type="password" id="password-2" placeholder="please re-enter your password" autocomplete="on">
-        <button class="register" type="button">Register Now!</button>
+        <button id="register" type="button">Register Now!</button>
         </fieldset>
         </form>
         `
     },
-    loginHTML(){
+    loginHTML() {
         return `
         <form class="login">
         <fieldset>
@@ -35,16 +35,17 @@ const factoryHTML = {
         <input type="text" id="loginUser" placeholder="please enter your username">
         <label for="password">Password:</label>
         <input type="password" id="loginPassword" placeholder="please enter your password" autocomplete="on">
-        <button class="signin" type="button">Sign In</button>
+        <button id="login" type="button">Sign In</button>
         </fieldset>
         </form>
         `
     },
-    dashboardHTML(){
+    dashboardHTML() {
         return `
         <header>
         <h1>Welcome</h1>
         </header>
+        <button id="logout" type="button">Log Out</button>
         `
     }
 }
