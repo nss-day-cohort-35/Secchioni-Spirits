@@ -6,7 +6,7 @@ const API = {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(user)
-        })
+        }).then (Response => Response.json())
     },
 }
 
