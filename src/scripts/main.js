@@ -53,7 +53,14 @@ document.querySelector(".submit").addEventListener("click", event => {
     } else {
         // newUser will crete an object with the name, username, password1 values
         let newUser = createUser(name, username, password1);
-        // API has a function that will create a new object, in this case a new user. this API function is imported from data.js file that is doing a fetch call to local server//
-        API.createUser(newUser)
+        // API has a function that will create a new object and translate from the server in order to make it readable for Javascript , in this case a new user. this API function is imported from data.js file that is doing a fetch call to local server//
+        API.createUser(newUser).then((user) => {  // response it's a placeholder to call the "users" from JSON database
+
+
+            sessionStorage.setItem("activeUser", user.id)  // sessionStorage is a builded method. It has different uses: we are using setItem to define the activeUser within the id number belonging to it, from the JSON database.
+
+            document.querySelector("#welcome").innerHTML = `<h2> Welcome in the website ${newUser.name}</h2>`
+        })
+
     }
 })
