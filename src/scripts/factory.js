@@ -7,6 +7,10 @@ const factoryHTML = {
         <div id="nav-container">
         <a href="#" id="landingRegister">Register</a>
         <a href="#" id="landingLogin">Log In</a>
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <div class="landingImage">
+        <img src="../src/scripts/images/Bangazon_Illustration.png" alt="gradilogo" height="700" width="1000">
+        </div>
         </div>
       </div>`
     },
@@ -22,7 +26,7 @@ const factoryHTML = {
         <input type="password" id="password-1" placeholder="please enter a valid password" autocomplete="on">
         <label for="password">Re-Enter Password:</label>
         <input type="password" id="password-2" placeholder="please re-enter your password" autocomplete="on">
-        <button id="register" type="button">Register Now!</button>
+        <button id="register" type="button" class="btn btn-outline-primary">Register Now!</button>
         </fieldset>
         </form>
         `
