@@ -47,7 +47,7 @@ const factoryHTML = {
   dashboardHTML() {
     return `
     <header>
-        <img src="../src/scripts/images/bangazon_logo" alt="bangazonlogo" height="700" width="1000">
+        <img class = "dashLogo" src="../src/scripts/images/bangazon_logo.png" alt="bangazonlogo" height="50" width="150">
     </header>
 
     <main>
