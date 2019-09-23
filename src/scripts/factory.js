@@ -65,7 +65,12 @@ const factoryHTML = {
 
           <div id="news">
             <h2>NEWS</h2>
-            <article id="newsContainer></article>
+            <article>
+            <div id="newsFormContainer">
+            <button id="add-news-btn">Add New Article</button>
+            </div>
+            <div id="newsCardsContainer"></div>
+            </article>
           </div>
           <!--ENDS newsChat section-->
         </section>
@@ -90,7 +95,6 @@ const factoryHTML = {
       <p>Footer Copyright</p>
       <button id="logout" type="button">Log Out</button>
     </footer>
-        
         `;
   }
 };
