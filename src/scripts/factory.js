@@ -53,13 +53,14 @@ const factoryHTML = {
       </div>
 
       <div id="mainSection">
-        <div id="welcome">
+        <div id="dashWelcome">
           <h3>Welcome user<img src="" alt="welcome image" /></h3>
         </div>
 
         <section id="newsChat">
           <div id="chat">
             <h2>CHAT</h2>
+            <article id="chatContainer"></article>
           </div>
 
           <div id="news">
