@@ -11,7 +11,7 @@ const apiNews = {
     },
     displayAllNews: (userId) => {
         return fetch(`http://localhost:8088/articles?_sort=news_date&_order=desc&userId=${userId}`)
-        .then(articles => articles.json())
+        .then(Response => Response.json())
     }
 }
 

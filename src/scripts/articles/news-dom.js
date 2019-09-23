@@ -5,9 +5,9 @@ const renderNewsToDom = {
         const newsContainer = document.querySelector("#newsFormContainer")
         newsContainer.innerHTML = newsFactory.newsHtmlForm()
     },
-    renderNewsToDom(newsObj) {
+    renderNewsToDom(htmlString) {
         const newsContainer = document.querySelector("#newsCardsContainer")
-        newsContainer.innerHTML += newsFactory.newsCardHtml(newsObj)
+        newsContainer.innerHTML += htmlString
     },
 }
 
