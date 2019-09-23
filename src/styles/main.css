@@ -24,3 +24,69 @@ h1 {
     margin-left: auto;
   margin-right: auto;
   }
+header {
+  background-color: purple;
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+#left {
+  border-style: solid;
+  display: flex;
+  width: 25%;
+}
+
+#mainSection {
+  border-style: solid;
+  border-color: green;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+#dashWelcome {
+  border-style: solid;
+  border-color: pink;
+}
+
+#chat {
+  border-style: solid;
+  border-color: blue;
+  display: flex;
+  width: 50%;
+}
+
+#news {
+  border-style: solid;
+  border-color: grey;
+  display: flex;
+  width: 50%;
+}
+
+#newsChat {
+  display: flex;
+  flex-direction: row;
+}
+
+#events {
+  border-style: solid;
+  border-color: orange;
+}
+
+#right {
+  border-style: solid;
+  border-color: #458;
+  width: 25%;
+  display: flex;
+}
+
+footer {
+  border-style: solid;
+  border-color: brown;
+  justify-content: flex-end;
+}
