@@ -64,11 +64,17 @@ const factoryHTML = {
         <section id="newsChat">
           <div id="chat">
             <h2>CHAT</h2>
+            <article id="chatContainer"></article>
           </div>
 
           <div id="news">
             <h2>NEWS</h2>
-            <article></article>
+            <article>
+            <div id="newsFormContainer">
+            <button id="add-news-btn">Add New Article</button>
+            </div>
+            <div id="newsCardsContainer"></div>
+            </article>
           </div>
           <!--ENDS newsChat section-->
         </section>
@@ -93,7 +99,6 @@ const factoryHTML = {
       <p>Footer Copyright</p>
       <button id="logout" type="button">Log Out</button>
     </footer>
-        
         `;
   }
 };
