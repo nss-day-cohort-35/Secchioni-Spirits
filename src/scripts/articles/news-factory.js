@@ -6,21 +6,21 @@ const newsFactory = {
             <input id="news_synopsis" type="text" placeholder="Synopsis">
             <input id="news_url" type="url" placeholder="URL">
             <input id="news_date" type="date">
-            <button id="save_news_btn">Save New Article</button>
-            <button id="cancel_news_btn">Cancel</button>
+            <button id="save-news-btn" type="button">Save New Article</button>
+            <button id="cancel-news-btn" type="button">Cancel</button>
         </fieldset>
 `
     },
-    newsCardHtml(newsObj) {
+    newsCardHtml(newNewsObj) {
         return `
-        <div id="newsCard--${newsObj.id}">
-            <h2>${newsObj.news_title}</h2>
-            <p> ${newsObj.news_synopsis}</p>
-            <a href="${newsObj.news_url}">Read More</a>
-            <p>${newsObj.news_date}</p>
-            <p>${newsObj.news_time}</p>
-            <button id="edit-news-btn--${newsObj.id}">Edit</button>
-            <button id="delete-news-btn--${newsObj.id}">Delete</button>
+        <div id="newsCard--${newNewsObj.id}">
+            <h2>${newNewsObj.news_title}</h2>
+            <p> ${newNewsObj.news_synopsis}</p>
+            <a href="${newNewsObj.news_url}">Read More</a>
+            <p>${newNewsObj.news_date}</p>
+            <p>${newNewsObj.news_time}</p>
+            <button id="edit-news-btn--${newNewsObj.id}">Edit</button>
+            <button id="delete-news-btn--${newNewsObj.id}">Delete</button>
         </div>
         `
     },

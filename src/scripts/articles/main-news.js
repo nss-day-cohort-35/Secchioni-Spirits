@@ -1,5 +1,5 @@
 import newsFactory from "./news-factory"
-import API_News from "./news-dom"
+import apiNews from "./news-data.js"
 import renderNewsToDom from "./news-dom"
 
 const newsMain = {
@@ -7,7 +7,7 @@ const newsMain = {
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", () => {
             if (event.target.id === "add-news-btn") {
-                renderNewsToDom.renderAddNewsForm()
+                renderNewsToDom.addNewsForm()
 
             }
         })
@@ -16,10 +16,10 @@ const newsMain = {
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", () => {
             if (event.target.id === "save-news-btn") {
-                const newNewsTitle = document.querySelector("#news-title").value
-                const newNewsSynopsis = document.querySelector("#news-synopsis").value
-                const newNewsUrl = document.querySelector("#news-url").value
-                const newNewsDate = document.querySelector("#news-date").value
+                const newNewsTitle = document.querySelector("#news_title").value
+                const newNewsSynopsis = document.querySelector("#news_synopsis").value
+                const newNewsUrl = document.querySelector("#news_url").value
+                const newNewsDate = document.querySelector("#news_date").value
                 const newsTime = new Date()
                 if (newNewsSynopsis !== "" && newNewsTitle !== "" && newNewsUrl !== "") {
                     const activeUser = parseInt(sessionStorage.getItem("activeUser"))
@@ -32,10 +32,10 @@ const newsMain = {
                         news_time: newsTime.toLocaleTimeString(),
                         userId: activeUser
                     }
-                    const addNewsBtnContainer = document.querySelector("#newsFormContainer")
-                    addNewsBtnContainer.innerHTML = newsFactory.rerenderAddNewsBtn()
-                    newsData.postNewNews(newNewsObj)
-                        .then(this.displayAllNews)
+                    const addNewsBtnContainer = document.querySelector("#newsCardsContainer")
+                    addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
+                    apiNews.postNewNews(newNewsObj)
+                        .then(apiNews.displayAllNews())
 
                 }
                 else {
@@ -48,8 +48,12 @@ const newsMain = {
         const cancelNewsBtn = document.querySelector("#cancel-news-btn")
         const addNewsBtnContainer = document.querySelector("#newsFormContainer")
         cancelNewsBtn.addEventListener("click", () => {
-            addNewsBtnContainer.innerHTML = newsFactory.rerenderAddNewsBtn()
+            addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
         })
+    },
+    invokeAllNewsFunctions() {
+        this.addEventListenerToAddNewsButton()
+        this.saveNewNews()
     }
 }
 

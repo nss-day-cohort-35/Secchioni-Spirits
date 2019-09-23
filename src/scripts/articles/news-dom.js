@@ -2,14 +2,14 @@ import newsFactory from "./news-factory"
 
 const renderNewsToDom = {
     addNewsForm() {
-        const newsContainer = document.querySelector("#news_Container")
+        const newsContainer = document.querySelector("#newsFormContainer")
         newsContainer.innerHTML = newsFactory.newsHtmlForm()
     },
-    renderNewsToDom(htmlString) {
+    renderNewsToDom(newsObj) {
         const newsContainer = document.querySelector("#newsCardsContainer")
-        newsContainer.innerHTML += htmlString
+        newsContainer.innerHTML += newsFactory.newsCardHtml(newsObj)
     },
 }
 
-export default renderNewsToDom 
+export default renderNewsToDom
 
