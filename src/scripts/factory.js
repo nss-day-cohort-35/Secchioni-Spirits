@@ -1,6 +1,6 @@
 const factoryHTML = {
-    landingPageHTML() {
-        return `
+  landingPageHTML() {
+    return `
         <div id="welcome">
         <div id="logo"></div>
         <h1>Welcome to Bangazon</h1>
@@ -8,10 +8,10 @@ const factoryHTML = {
         <a href="#" id="landingRegister">Register</a>
         <a href="#" id="landingLogin">Log In</a>
         </div>
-      </div>`
-    },
-    registerHTML() {
-        return `
+      </div>`;
+  },
+  registerHTML() {
+    return `
         <form class="registration">
         <fieldset>
         <label for="name">First and Last name:</label>
@@ -25,10 +25,10 @@ const factoryHTML = {
         <button id="register" type="button">Register Now!</button>
         </fieldset>
         </form>
-        `
-    },
-    loginHTML() {
-        return `
+        `;
+  },
+  loginHTML() {
+    return `
         <form class="login">
         <fieldset>
         <label for="username">Username:</label>
@@ -38,16 +38,60 @@ const factoryHTML = {
         <button id="login" type="button">Sign In</button>
         </fieldset>
         </form>
-        `
-    },
-    dashboardHTML() {
-        return `
+        `;
+  },
+  dashboardHTML() {
+    return `
         <header>
-        <h1>Welcome</h1>
-        </header>
-        <button id="logout" type="button">Log Out</button>
-        `
-    }
-}
+      <img src="" alt="Logo" />
+    </header>
 
-export default factoryHTML
+    <main>
+      <div id="left">
+        <section id="friends"><p>FRIENDS</p></section>
+        <!--ENDS left-->
+      </div>
+
+      <div id="mainSection">
+        <div id="welcome">
+          <h3>Welcome user<img src="" alt="welcome image" /></h3>
+        </div>
+
+        <section id="newsChat">
+          <div id="chat">
+            <h2>CHAT</h2>
+          </div>
+
+          <div id="news">
+            <h2>NEWS</h2>
+            <article></article>
+          </div>
+          <!--ENDS newsChat section-->
+        </section>
+
+        <section id="events">
+          <h2>EVENTS</h2>
+          <div id="event1"></div>
+          <div id="event2"></div>
+          <div id="event3"></div>
+        </section>
+        <!--ENDS mainSection div-->
+      </div>
+
+      <div id="right">
+        <h2>TASKS</h2>
+        <img src="" alt="Tasks image" />
+        <section id="tasks"></section>
+      </div>
+    </main>
+
+    <footer>
+      <p>Footer Copyright</p>
+      <button id="logout" type="button">Log Out</button>
+    </footer>
+        
+        `;
+  }
+};
+
+export default factoryHTML;
