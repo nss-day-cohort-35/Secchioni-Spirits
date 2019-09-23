@@ -99,6 +99,12 @@ overallContainer.addEventListener("click", event => {
           if (users) {
             renderToDom.renderDashboardDom()
             sessionStorage.setItem("activeUser", users.id)
+          } else {
+            let okPassword = confirm("Something's gone wrong. click \"Cancel\" to try again OR \"OK\" to register as a new user")
+            if (okPassword === true) {
+              renderToDom.renderRegistrationDom()
+            }
+
           }
         }
         )
