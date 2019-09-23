@@ -7,6 +7,7 @@ header {
 main {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 #left {
@@ -23,7 +24,7 @@ main {
   flex-direction: column;
 }
 
-#welcome {
+#dashWelcome {
   border-style: solid;
   border-color: pink;
 }
@@ -63,4 +64,15 @@ footer {
   border-style: solid;
   border-color: brown;
   justify-content: flex-end;
+  bottom: 0;
+  margin-top: auto;
+}
+
+#chatContainer {
+  border-style: solid;
+  display: flex;
+}
+
+#newsContainer {
+  border-style: solid;
 }
