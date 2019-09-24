@@ -37,7 +37,7 @@ const newsMain = {
                     addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
                     apiNews.postNewNews(newNewsObj)
                         .then(response => {
-                            this.displayAllNews()
+                            this.showNews()
                         }
                         )
 
