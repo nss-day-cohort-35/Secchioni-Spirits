@@ -1,11 +1,11 @@
 const apiEvents = {
-  postNewNews: newsObj => {
+  postNewNews: eventsObj => {
     return fetch("http://localhost:8088/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newsObj)
+      body: JSON.stringify(eventsObj)
     }).then(Response => Response.json());
   },
   displayAllEvents: userId => {

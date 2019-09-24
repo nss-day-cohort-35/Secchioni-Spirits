@@ -67,57 +67,59 @@ const eventsMain = {
       });
     });
   },
-  deleteNews() {
-    const mainContainer = document.querySelector("#container");
-    mainContainer.addEventListener("click", () => {
-      if (event.target.id.includes("delete-news-btn")) {
-        const newsId = event.target.id.split("--")[1];
-        document.querySelector("#newsCardsContainer").innerHTML = "";
-        apiNews.deleteNews(newsId).then(this.displayAllNews);
+
+  deleteEvents() {
+    const mainEventsContainer = document.querySelector("#events");
+    mainEventsContainer.addEventListener("click", () => {
+      if (event.target.id.includes("delete-events-btn")) {
+        const eventsId = event.target.id.split("--")[1];
+        document.querySelector("#events").innerHTML = "";
+        apiEvents.deleteEvents(eventsId).then(this.displayAllEvents);
       }
     });
   },
-  showNews() {
-    this.displayAllNews();
+  showEvents() {
+    this.displayAllEvents();
   },
-  editNews() {
-    const mainContainer = document.querySelector("#container");
-    mainContainer.addEventListener("click", () => {
-      if (event.target.id.split("--")[0] === "edit-news-btn") {
-        const newsId = event.target.id.split("--")[1];
-        apiNews.getSingleNews(newsId).then(newsObj => {
-          renderNewsToDom.renderNewsEditForm(newsObj);
+  editEvents() {
+    const mainEventsContainer = document.querySelector("#events");
+    mainEventsContainer.addEventListener("click", () => {
+      if (event.target.id.split("--")[0] === "edit-events-btn") {
+        const eventsId = event.target.id.split("--")[1];
+        apiEvents.getSingleNews(eventsId).then(eventsObj => {
+          renderEventToDom.renderEventsEditForm(eventsObj);
         });
-      } else if (event.target.id.split("--")[0] === "save-news-edits-btn") {
-        const editTitleField = document.querySelector("#edit-news-title").value;
-        const editSynopsisField = document.querySelector("#edit-news-synopsis")
+      } else if (event.target.id.split("--")[0] === "save-events-edits-btn") {
+        const editTitleField = document.querySelector("#edit-events-title")
           .value;
-        const editUrlField = document.querySelector("#edit-news-url").value;
-        const newsId = event.target.id.split("--")[1];
-        const editNewsDate = document.querySelector("#edit-news-date").value;
-        const editNewsTime = new Date();
+        const editEventsField = document.querySelector("#edit-events-location")
+          .value;
+        const editUrlField = document.querySelector("#edit-events-url").value;
+        const eventsId = event.target.id.split("--")[1];
+        const editNewsDate = document.querySelector("#edit-events-date").value;
+        const editEventsTime = new Date();
         const activeUser = parseInt(sessionStorage.getItem("activeUser"));
-        const updatedNews = {
-          news_title: editTitleField,
-          news_synopsis: editSynopsisField,
-          news_url: editUrlField,
-          news_date: editNewsDate,
-          news_time: editNewsTime.toLocaleTimeString(),
+        const updatedEvents = {
+          events_title: editTitleField,
+          events_date: editDateField,
+          events_url: editUrlField,
+          events_date: editEventsDate,
+          eventss_time: editEventsTime.toLocaleTimeString(),
           userId: activeUser,
           id: newsId
         };
-        document.querySelector("#newsCardsContainer").innerHTML = "";
-        apiNews.editNews(updatedNews).then(this.displayAllNews); // if you want to run a single function, when you use .then you don't have to invoke the function again with the parentesis
+        document.querySelector("#events").innerHTML = "";
+        apiEvents.editEvents(updatedEvents).then(this.displayAllEvents); // if you want to run a single function, when you use .then you don't have to invoke the function again with the parentesis
       }
     });
   },
-  invokeAllNewsFunctions() {
-    this.addEventListenerToAddNewsButton();
-    this.saveNewNews();
-    this.deleteNews();
-    this.editNews();
-    this.showNews();
+  invokeAllEventsFunctions() {
+    this.addEventListenerToAddEventsButton();
+    this.saveNewEventss();
+    this.deleteEvents();
+    this.editEvents();
+    this.showEvents();
   }
 };
 
-export default newsMain;
+export default eventsMain;
