@@ -70,7 +70,6 @@ const newsMain = {
 
     },
     deleteNews() {
-        
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", (event) => {
             if (event.target.id.includes("delete-news-btn")) {
