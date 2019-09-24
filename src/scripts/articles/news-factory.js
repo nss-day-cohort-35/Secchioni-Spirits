@@ -25,8 +25,7 @@ const newsFactory = {
         `
     },
     addNewsButton() {
-        return `
-        <button id="add-news-btn" type="button">Add New Article</button>`
+        return ""
     },
     editNewsHtml(newsObj) {
         return `
