@@ -70,8 +70,8 @@ const factoryHTML = {
           <div id="news">
             <h2>NEWS</h2>
             <article>
-            <div id="newsFormContainer">
             <button id="add-news-btn">Add New Article</button>
+            <div id="newsFormContainer">
             </div>
             <div id="newsCardsContainer"></div>
             </article>

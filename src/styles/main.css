@@ -106,3 +106,6 @@ footer {
 #newsContainer {
   border-style: solid;
 }
+#newsCardsContainer {
+  overflow: auto;
+}
