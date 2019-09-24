@@ -1,6 +1,6 @@
-import newsFactory from "./news-factory"
 import apiNews from "./news-data.js"
 import renderNewsToDom from "./news-dom"
+import newsFactory from "./news-factory.js"
 
 const newsMain = {
     addEventListenerToAddNewsButton() {
@@ -8,6 +8,7 @@ const newsMain = {
         mainContainer.addEventListener("click", () => {
             if (event.target.id === "add-news-btn") {
                 renderNewsToDom.addNewsForm()
+                this.cancelNewsForm()
 
             }
         })
@@ -33,9 +34,12 @@ const newsMain = {
                         userId: activeUser
                     }
                     const addNewsBtnContainer = document.querySelector("#newsCardsContainer")
-                    addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
+                    addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
                     apiNews.postNewNews(newNewsObj)
-                        .then(apiNews.displayAllNews())
+                        .then(response => {
+                            this.displayAllNews()
+                        }
+                        )
 
                 }
                 else {
@@ -48,12 +52,44 @@ const newsMain = {
         const cancelNewsBtn = document.querySelector("#cancel-news-btn")
         const addNewsBtnContainer = document.querySelector("#newsFormContainer")
         cancelNewsBtn.addEventListener("click", () => {
-            addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
+            addNewsBtnContainer.innerHTML = renderNewsToDom.addNewsForm()
         })
+    },
+    displayAllNews() {
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+        apiNews.displayAllNews(activeUser)
+            .then(response => {
+                document.querySelector("#newsFormContainer").innerHTML = ""
+                response.forEach(news => {
+                    const formatNewDate = new Date(news.news_date).toLocaleDateString()
+                    news.news_date = formatNewDate
+                    const newsHtml = newsFactory.newsCardHtml(news)
+                    renderNewsToDom.renderNewsToDom(newsHtml)
+                })
+            })
+
+    },
+    deleteNews() {
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => {
+            if (event.target.id.includes("delete-news-btn")) {
+                const newsId = event.target.id.split("--")[1]
+                document.querySelector("#newsCardsContainer").innerHTML = "";
+                apiNews.deleteNews(newsId)
+                .then(this.displayAllNews)
+
+
+            }
+        })
+    },
+    showNews() {
+        this.displayAllNews()
     },
     invokeAllNewsFunctions() {
         this.addEventListenerToAddNewsButton()
         this.saveNewNews()
+        this.deleteNews()
+        this.showNews()
     }
 }
 
