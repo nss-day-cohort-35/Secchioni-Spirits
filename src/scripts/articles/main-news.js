@@ -70,8 +70,9 @@ const newsMain = {
 
     },
     deleteNews() {
+        
         const mainContainer = document.querySelector("#container")
-        mainContainer.addEventListener("click", () => {
+        mainContainer.addEventListener("click", (event) => {
             if (event.target.id.includes("delete-news-btn")) {
                 const newsId = event.target.id.split("--")[1]
                 document.querySelector("#newsCardsContainer").innerHTML = "";
