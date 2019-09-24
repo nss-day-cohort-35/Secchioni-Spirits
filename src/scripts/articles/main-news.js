@@ -37,7 +37,7 @@ const newsMain = {
                     addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
                     apiNews.postNewNews(newNewsObj)
                         .then(response => {
-                            this.displayAllNews()
+                            this.showNews()
                         }
                         )
 
@@ -112,9 +112,8 @@ const newsMain = {
                     userId: activeUser,
                     id: newsId
                 }
-                renderNewsToDom.clearNewsEditForm()
-                apiNews.editNews(updatedNews).then(
-                    this.displayAllNews)
+                document.querySelector("#newsCardsContainer").innerHTML = ""
+                apiNews.editNews(updatedNews).then(this.displayAllNews) // if you want to run a single function, when you use .then you don't have to invoke the function again with the parentesis
             }
         })
     },
