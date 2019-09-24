@@ -7,8 +7,8 @@ const renderNewsToDom = {
     },
     renderNewsToDom(newsObj) {
         const newsContainer = document.querySelector("#newsCardsContainer")
-        newsContainer.innerHTML += newsFactory.newsCardHtml(newsObj)
-    },
+        newsContainer.innerHTML += newsObj
+    }
 }
 
 export default renderNewsToDom

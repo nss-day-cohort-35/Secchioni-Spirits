@@ -1,6 +1,7 @@
 import newsFactory from "./news-factory"
 import apiNews from "./news-data.js"
 import renderNewsToDom from "./news-dom"
+import renderToDom from "../renderDom"
 
 const newsMain = {
     addEventListenerToAddNewsButton() {
@@ -33,10 +34,13 @@ const newsMain = {
                         userId: activeUser
                     }
                     const addNewsBtnContainer = document.querySelector("#newsCardsContainer")
-                    addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
                     apiNews.postNewNews(newNewsObj)
-                        .then(apiNews.displayAllNews())
-
+                        .then(response => {
+                            apiNews.displayAllNews(activeUser)
+                            .then(response =>  {
+                           this.displayAllNews()
+                            })
+                        })
                 }
                 else {
                     alert("please fill out the form")
@@ -49,6 +53,19 @@ const newsMain = {
         const addNewsBtnContainer = document.querySelector("#newsFormContainer")
         cancelNewsBtn.addEventListener("click", () => {
             addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
+        })
+    },
+    displayAllNews(){
+        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+        apiNews.displayAllNews(activeUser)
+        .then(response => {
+            document.querySelector("#newsCardContainer").innerHTML = ""
+            response.forEach(news => {
+                const formatNewDate = new Date(news.news.date).toLocaleDateString()
+                news.news_date = formatNewDate
+                const newsHTML = newsFactory.newsCardHtml(news)
+                renderNewsToDom.renderNewsToDom(newsHTML)
+            })
         })
     },
     invokeAllNewsFunctions() {
