@@ -52,7 +52,7 @@ const newsMain = {
         const cancelNewsBtn = document.querySelector("#cancel-news-btn")
         const addNewsBtnContainer = document.querySelector("#newsFormContainer")
         cancelNewsBtn.addEventListener("click", () => {
-            addNewsBtnContainer.innerHTML = renderNewsToDom.addNewsForm()
+            addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
         })
     },
     displayAllNews() {
