@@ -11,22 +11,21 @@ const newsFactory = {
         </fieldset>
 `
     },
-    newsCardHtml(newNewsObj) {
+    newsCardHtml(articles) {
         return `
-        <div id="newsCard--${newNewsObj.id}">
-            <h2>${newNewsObj.news_title}</h2>
-            <p> ${newNewsObj.news_synopsis}</p>
-            <a href="${newNewsObj.news_url}">Read More</a>
-            <p>${newNewsObj.news_date}</p>
-            <p>${newNewsObj.news_time}</p>
-            <button id="edit-news-btn--${newNewsObj.id}">Edit</button>
-            <button id="delete-news-btn--${newNewsObj.id}">Delete</button>
+        <div id="newsCard--${articles.id}">
+            <h2>${articles.news_title}</h2>
+            <p> ${articles.news_synopsis}</p>
+            <a href="${articles.news_url}">Read More</a>
+            <p>${articles.news_date}</p>
+            <p>${articles.news_time}</p>
+            <button id="edit-news-btn--${articles.id}">Edit</button>
+            <button id="delete-news-btn--${articles.id}">Delete</button>
         </div>
         `
     },
     addNewsButton() {
-        return `
-        <button id="add-news-btn" type="button">Add New Article</button>`
+        return ""
     }
 }
 
