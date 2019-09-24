@@ -37,7 +37,8 @@ const newsMain = {
                     addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
                     apiNews.postNewNews(newNewsObj)
                         .then(response => {
-                            this.displayAllNews()}
+                            this.displayAllNews()
+                        }
                         )
 
                 }
@@ -51,7 +52,7 @@ const newsMain = {
         const cancelNewsBtn = document.querySelector("#cancel-news-btn")
         const addNewsBtnContainer = document.querySelector("#newsFormContainer")
         cancelNewsBtn.addEventListener("click", () => {
-            addNewsBtnContainer.innerHTML = renderNewsToDom.renderNewsToDom()
+            addNewsBtnContainer.innerHTML = renderNewsToDom.addNewsForm()
         })
     },
     displayAllNews() {
@@ -68,9 +69,27 @@ const newsMain = {
             })
 
     },
+    deleteNews() {
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => {
+            if (event.target.id.includes("delete-news-btn")) {
+                const newsId = event.target.id.split("--")[1]
+                document.querySelector("#newsCardsContainer").innerHTML = "";
+                apiNews.deleteNews(newsId)
+                .then(this.displayAllNews)
+
+
+            }
+        })
+    },
+    showNews() {
+        this.displayAllNews()
+    },
     invokeAllNewsFunctions() {
         this.addEventListenerToAddNewsButton()
         this.saveNewNews()
+        this.deleteNews()
+        this.showNews()
     }
 }
 
