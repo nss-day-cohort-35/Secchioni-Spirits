@@ -16,32 +16,31 @@ const eventsMain = {
     const mainEventsContainer = document.querySelector("#events");
     mainEventsContainer.addEventListener("click", () => {
       if (event.target.id === "save-events-btn") {
-        const newEventsTitle = document.querySelector("#eventss_title").value;
-        const newEventsLocation = document.querySelector("#events_location").value;
+        const newEventsTitle = document.querySelector("#events_title").value;
+        const newEventsLocation = document.querySelector("#events_location")
+          .value;
         const newEventsUrl = document.querySelector("#events_url").value;
-        const newEventsDate = document.querySelector("#news_date").value;
-        const newsTime = new Date();
+        const newEventsDate = document.querySelector("#events_date").value;
+        const eventsTime = new Date();
         if (
-          newNewsSynopsis !== "" &&
-          newNewsTitle !== "" &&
-          newNewsUrl !== ""
+          newEventsTitle !== "" &&
+          newEventsTitle !== "" &&
+          newEventsUrl !== ""
         ) {
           const activeUser = parseInt(sessionStorage.getItem("activeUser"));
 
-          const newNewsObj = {
-            news_title: newNewsTitle,
-            news_synopsis: newNewsSynopsis,
-            news_url: newNewsUrl,
-            news_date: newNewsDate,
-            news_time: newsTime.toLocaleTimeString(),
+          const newEventsObj = {
+            events_title: newEventsTitle,
+            events_location: newEventsLocation,
+            events_url: newEventsUrl,
+            events_date: newEventsDate,
+            events_time: eventsTime.toLocaleTimeString(),
             userId: activeUser
           };
-          const addNewsBtnContainer = document.querySelector(
-            "#newsCardsContainer"
-          );
-          addNewsBtnContainer.innerHTML = newsFactory.addNewsButton();
-          apiNews.postNewNews(newNewsObj).then(response => {
-            this.showNews();
+          const addEventsBtnContainer = document.querySelector("#events");
+          addEventsBtnContainer.innerHTML = eventsFactory.addNewsButton();
+          apiEvents.postNewEvents(newEventsObj).then(response => {
+            this.showEvents();
           });
         } else {
           alert("please fill out the form");
@@ -49,11 +48,11 @@ const eventsMain = {
       }
     });
   },
-  cancelNewsForm() {
-    const cancelNewsBtn = document.querySelector("#cancel-news-btn");
-    const addNewsBtnContainer = document.querySelector("#newsFormContainer");
-    cancelNewsBtn.addEventListener("click", () => {
-      addNewsBtnContainer.innerHTML = newsFactory.addNewsButton();
+  cancelEventsForm() {
+    const cancelEventsBtn = document.querySelector("#cancel-events-btn");
+    const addEventsBtnContainer = document.querySelector("#events");
+    cancelEventsBtn.addEventListener("click", () => {
+      addEventsBtnContainer.innerHTML = eventsFactory.addEventsButton();
     });
   },
   displayAllNews() {
