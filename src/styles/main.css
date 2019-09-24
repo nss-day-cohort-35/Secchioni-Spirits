@@ -70,7 +70,7 @@ margin-left: 1em;
 margin-top: 0.8em;
 margin-right: 1em;
 margin-bottom: 1em;
-width: 25vw; 
+width: 25vw;
 }
 
 #mainSection {
@@ -95,10 +95,8 @@ width: 25vw;
   border-style: none;
   background: white;
   border-radius: 0.6em;
-  border-color:
   display: flex;
   width: 25vw;
-  
 }
 
 #news {
@@ -107,8 +105,6 @@ width: 25vw;
   border-radius: 0.6em;
   display: flex;
   width: 25vw;
-
-
 }
 
 #newsChat {
@@ -144,7 +140,7 @@ margin-left: 1em;
 margin-top: 0.8em;
 margin-right: 1em;
 margin-bottom: 1em;
-width: 25vw; 
+width: 25vw;
 }
 
 footer {
@@ -165,9 +161,5 @@ footer {
 }
 #newsCardsContainer {
   overflow: auto;
-}
-
-body {
-    background: #B3B3C8;
-    margin: 0;
+  height: 500px;
 }

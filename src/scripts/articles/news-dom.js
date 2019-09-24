@@ -12,8 +12,6 @@ const renderNewsToDom = {
     renderNewsEditForm(newsObj) {
         const editNewsCard = document.querySelector(`#newsCard--${newsObj.id}`)
         editNewsCard.innerHTML = newsFactory.editNewsHtml(newsObj)
-    },
-    clearNewsEditForm() {
     }
 
 }
