@@ -67,8 +67,7 @@ const factoryHTML = {
             <h2>NEWS</h2>
             <article>
             <button id="add-news-btn">Add New Article</button>
-            <div id="newsFormContainer">
-            </div>
+            <div id="newsFormContainer"></div>
             <div id="newsCardsContainer"></div>
             </article>
           </div>
@@ -87,7 +86,13 @@ const factoryHTML = {
       <div id="right">
         <h2>TASKS</h2>
         <img src="" alt="Tasks image" />
-        <section id="tasks"></section>
+        <section id="tasks">
+        <div id="taskFormContainer">
+        <button id="add-task-btn">Add New Task</button>
+        <button id="see-todo-tasks-btn">View To Do List</button>
+        <button id="see-completed-tasks-btn">View Completed Tasks</button></div>
+        <div id="taskCardsContainer"></div>
+        </section>
       </div>
     </main>
 

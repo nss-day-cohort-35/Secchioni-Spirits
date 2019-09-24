@@ -2,6 +2,7 @@ import createUser from "./auth/eventListeners.js"
 import API from "./auth/data.js"
 import renderToDom from "./renderDom.js"
 import newsMain from "./articles/main-news.js"
+import tasksMain from "./tasks/tasks-main.js"
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
@@ -118,4 +119,6 @@ overallContainer.addEventListener("click", event => {
     sessionStorage.removeItem("activeUser")
   }
 })
+
+tasksMain.invokeAllTaskFunctions()  //Invoke all the functions for the task section
 
