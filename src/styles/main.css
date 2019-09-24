@@ -78,4 +78,5 @@ footer {
 }
 #newsCardsContainer {
   overflow: auto;
+  height: 500px;
 }
