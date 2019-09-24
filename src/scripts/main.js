@@ -100,7 +100,8 @@ overallContainer.addEventListener("click", event => {
           if (users) {
             renderToDom.renderDashboardDom()
             sessionStorage.setItem("activeUser", users.id)
-            newsMain.displayAllNews()
+            // newsMain.displayAllNews()
+            newsMain.invokeAllNewsFunctions()
           } else {
             let okPassword = confirm("Something's gone wrong. click \"Cancel\" to try again OR \"OK\" to register as a new user")
             if (okPassword === true) {
@@ -118,4 +119,3 @@ overallContainer.addEventListener("click", event => {
   }
 })
 
-newsMain.invokeAllNewsFunctions()
