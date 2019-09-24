@@ -77,7 +77,7 @@ const newsMain = {
                 const newsId = event.target.id.split("--")[1]
                 document.querySelector("#newsCardsContainer").innerHTML = "";
                 apiNews.deleteNews(newsId)
-                .then(this.displayAllNews)
+                    .then(this.displayAllNews)
 
 
             }
@@ -86,10 +86,44 @@ const newsMain = {
     showNews() {
         this.displayAllNews()
     },
+    editNews() {
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => {
+            if (event.target.id.split("--")[0] === "edit-news-btn") {
+                const newsId = event.target.id.split("--")[1]
+                apiNews.getSingleNews(newsId)
+                    .then((newsObj) => {
+                        renderNewsToDom.renderNewsEditForm(newsObj)
+                    })
+            }
+            else if (event.target.id.split("--")[0] === "save-news-edits-btn") {
+                const editTitleField = document.querySelector("#edit-news-title").value
+                const editSynopsisField = document.querySelector("#edit-news-synopsis").value
+                const editUrlField = document.querySelector("#edit-news-url").value
+                const newsId = event.target.id.split("--")[1]
+                const editNewsDate = document.querySelector("#edit-news-date").value
+                const editNewsTime = new Date()
+                const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+                const updatedNews = {
+                    news_title: editTitleField,
+                    news_synopsis: editSynopsisField,
+                    news_url: editUrlField,
+                    news_date: editNewsDate,
+                    news_time: editNewsTime.toLocaleTimeString(),
+                    userId: activeUser,
+                    id: newsId
+                }
+                renderNewsToDom.clearNewsEditForm()
+                apiNews.editNews(updatedNews).then(
+                    this.displayAllNews)
+            }
+        })
+    },
     invokeAllNewsFunctions() {
         this.addEventListenerToAddNewsButton()
         this.saveNewNews()
         this.deleteNews()
+        this.editNews()
         this.showNews()
     }
 }
