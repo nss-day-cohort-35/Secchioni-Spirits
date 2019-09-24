@@ -47,12 +47,12 @@ const factoryHTML = {
   dashboardHTML() {
     return `
     <header>
-        <img class = "dashLogo" src="../src/scripts/images/bangazon_logo.png" alt="bangazonlogo" height="50" width="150">
+        <img class = "dashLogo" src="../src/scripts/images/bangazonLogo.png" alt="bangazonlogo" height="140" width="150">
     </header>
 
     <main>
       <div id="left">
-        <section id="friends"><p>FRIENDS</p></section>
+        <section id="friends"><h2>FRIENDS</h2></section>
         <!--ENDS left-->
       </div>
 
@@ -89,9 +89,7 @@ const factoryHTML = {
       </div>
 
       <div id="right">
-        <h2>TASKS</h2>
-        <img src="" alt="Tasks image" />
-        <section id="tasks"></section>
+        <section id="tasks"><h2>TASKS</h2></section>
       </div>
     </main>
 

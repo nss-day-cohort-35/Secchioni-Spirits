@@ -1,3 +1,14 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* The CSS box-sizing property allows us to include the
+padding and border in an element's total width and height. */
+html {
+    box-sizing: border-box;
+}
+
+
 h1 {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -29,48 +40,75 @@ h1 {
   }
 
 header {
-  background-color: #F2F2F3;
+  background-color:white;
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 main {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   height: 100vh;
+  margin: 0;
 }
 
 #left {
-  border-style: solid;
+  border-style: none;
+  border-radius: 2em;
   display: flex;
-  width: 25%;
+  width: 25vw;
+  justify-content: space-around;
+}
+
+#friends {
+border-style: none;
+border-radius: 0.6em;
+background:white;
+margin-left: 1em;
+margin-top: 0.8em;
+margin-right: 1em;
+margin-bottom: 1em;
+width: 25vw; 
 }
 
 #mainSection {
-  border-style: solid;
-  border-color: green;
+  border-style: none;
   display: flex;
-  width: 50%;
+  width: 75vw;
   flex-direction: column;
 }
 
 #dashWelcome {
   border-style: solid;
   border-color: pink;
+  border-style: none;
+  border-radius: 0.6em;
+  background:white;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+  width: 50vw;
 }
 
 #chat {
-  border-style: solid;
-  border-color: blue;
+  border-style: none;
+  background: white;
+  border-radius: 0.6em;
+  border-color:
   display: flex;
-  width: 50%;
+  width: 25vw;
+  
 }
 
 #news {
-  border-style: solid;
-  border-color: grey;
+  border-style: none;
+  background: white;
+  border-radius: 0.6em;
   display: flex;
-  width: 50%;
+  width: 25vw;
+
+
 }
 
 #newsChat {
@@ -79,15 +117,34 @@ main {
 }
 
 #events {
-  border-style: solid;
-  border-color: orange;
+  border-style: none;
+  border-radius: 0.6em;
+  background:white;
+  margin-top: 0.8em;
+  margin-right: 1em;
+ margin-bottom: 1em;
+ width: 100%;
 }
 
 #right {
-  border-style: solid;
-  border-color: #458;
-  width: 25%;
-  display: flex;
+border-style: none;
+border-radius: 2em;
+display: flex;
+width: 25vw;
+justify-content: space-around;
+}
+
+
+#tasks {
+    border-style: none;
+    border-radius: 0.6em;
+    background:white;
+    width: 25vw;
+margin-left: 1em;
+margin-top: 0.8em;
+margin-right: 1em;
+margin-bottom: 1em;
+width: 25vw; 
 }
 
 footer {
@@ -108,4 +165,9 @@ footer {
 }
 #newsCardsContainer {
   overflow: auto;
+}
+
+body {
+    background: #B3B3C8;
+    margin: 0;
 }
