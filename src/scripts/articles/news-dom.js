@@ -9,6 +9,13 @@ const renderNewsToDom = {
         const newsContainer = document.querySelector("#newsCardsContainer")
         newsContainer.innerHTML += htmlString
     },
+    renderNewsEditForm(newsObj) {
+        const editNewsCard = document.querySelector(`#newsCard--${newsObj.id}`)
+        editNewsCard.innerHTML = newsFactory.editNewsHtml(newsObj)
+    },
+    clearNewsEditForm() {
+    }
+
 }
 
 export default renderNewsToDom
