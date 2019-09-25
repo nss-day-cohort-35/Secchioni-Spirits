@@ -31,4 +31,4 @@ Summer Liddington
 
 ### Database Diagram
 
-![nutshell features](DBdiagram.png)
+![nutshell features](DBdiagram.PNG)
