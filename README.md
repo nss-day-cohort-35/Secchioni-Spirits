@@ -2,10 +2,10 @@
 
 Group Project:
 Chandler
-Gradi Ellis
-Fortunato Mugnano
-Seth Oakley
-Summer Liddington
+[Gradi Ellis](https://github.com/geellis1)
+[Fortunato Mugnano](https://github.com/FortunatoMugnano)
+[Seth Oakley](https://github.com/sethoak)
+[Summer Liddington](https://github.com/summerliddington)
 
 ## Setup: Follow these steps exactly
 
