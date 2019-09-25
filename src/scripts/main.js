@@ -123,7 +123,6 @@ dom and else check if they are clicking register and login. we need to call thin
 the correct order of operation. right now it is specific like a,b,c but it some steps should
 be available all  the time not only in certain order (like adding new news)-you shouldn't
 have to have just logged in to add new news. */
-tasksMain.invokeAllTaskFunctions()  //Invoke all the functions for the task section
 tasksMain.invokeAllTaskFunctions(); //Invoke all the functions for the task section
 
 eventsMain.invokeAllEventsFunctions();

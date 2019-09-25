@@ -10,7 +10,6 @@ const tasksMain = {
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", () => {
             if (event.target.id === "add-task-btn") {
-                renderTasksToDom.addTaskForm()
                 this.saveNewTask()
             }
         })
