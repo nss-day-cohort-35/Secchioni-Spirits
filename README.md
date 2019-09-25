@@ -1,3 +1,5 @@
+(Bangazon_Illustration_readme.png)
+
 # Nutshell: The Information Dashboard for 'Bangazon' Employees
 
 Nutshell is a new product offering that we have been tasked with building. It's a dashboard for Bangazon employees to use to organize their daily tasks, events, news article.
