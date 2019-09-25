@@ -1,6 +1,8 @@
 # Nutshell: The Information Dashboard for 'Bangazon' Employees
 
-Group Project:
+Nutshell is a new product offering that we have been tasked with building. It's a dashboard for Bangazon employees to use to organize their daily tasks, events, news article.
+
+## Group Project:
 
 - [Chandler Turner](https://github.com/jchandlerturner)
 - [Gradi Ellis](https://github.com/geellis1)
