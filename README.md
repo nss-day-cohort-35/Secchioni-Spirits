@@ -1,8 +1,8 @@
 # Nutshell: The Information Dashboard for 'Bangazon' Employees
 
 Group Project:
-Chandler
 
+- [Chandler](https://github.com/jchandlerturner)
 - [Gradi Ellis](https://github.com/geellis1)
 - [Fortunato Mugnano](https://github.com/FortunatoMugnano)
 - [Seth Oakley](https://github.com/sethoak)
