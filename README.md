@@ -1,5 +1,12 @@
 # Nutshell: The Information Dashboard for 'Bangazon' Employees
 
+Group Project:
+Chandler
+Gradi Ellis
+Fortunato Mugnano
+Seth Oakley
+Summer Liddington
+
 ## Setup: Follow these steps exactly
 
 1. Clone this repository
@@ -24,4 +31,4 @@
 
 ### Database Diagram
 
-![nutshell features](/DBdiagram.png)
+![nutshell features](DBdiagram.png)
