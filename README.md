@@ -2,7 +2,7 @@
 
 Group Project:
 
-- [Chandler](https://github.com/jchandlerturner)
+- [Chandler Turner](https://github.com/jchandlerturner)
 - [Gradi Ellis](https://github.com/geellis1)
 - [Fortunato Mugnano](https://github.com/FortunatoMugnano)
 - [Seth Oakley](https://github.com/sethoak)
