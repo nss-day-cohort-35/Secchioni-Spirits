@@ -116,7 +116,7 @@ const newsMain = {
         })
     },
     invokeAllNewsFunctions() {
-        this.addEventListenerToAddNewsButton()
+        // this.addEventListenerToAddNewsButton()
         this.saveNewNews()
         this.deleteNews()
         this.editNews()
