@@ -131,9 +131,10 @@ const factoryHTML = {
           <h2>EVENTS</h2>
           <img class = "newsLogo" src="../src/scripts/images/events.png" alt="bangazonlogo" height="90" width="80">
           </div>
-          <div id="event1"></div>
-          <div id="event2"></div>
-          <div id="event3"></div>
+          <button id="addEventsButton" type="button">Add Event</button>
+          <button id="showEventsButton" type="button">Show Events</button>
+          <div id="eventsFormContainer"></div>
+          <div id="eventsCardsContainer"></div>
         </section>
         <!--ENDS mainSection div-->
       </div>
