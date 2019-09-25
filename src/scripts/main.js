@@ -20,6 +20,7 @@ if (!activeUser) {
   //If there IS an active user, populate the log in form
 } else {
   renderToDom.renderDashboardDom()
+  newsMain.invokeAllNewsFunctions()
 }
 
 //Event listener to populate registration or login form when links are clicked
@@ -101,8 +102,7 @@ overallContainer.addEventListener("click", event => {
           if (users) {
             renderToDom.renderDashboardDom()
             sessionStorage.setItem("activeUser", users.id)
-            // newsMain.displayAllNews()
-            newsMain.invokeAllNewsFunctions()
+            newsMain.displayAllNews()
           } else {
             let okPassword = confirm("Something's gone wrong. click \"Cancel\" to try again OR \"OK\" to register as a new user")
             if (okPassword === true) {
