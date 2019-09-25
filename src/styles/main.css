@@ -57,7 +57,7 @@ p {
     padding-top: 50px;
     padding-bottom: 0px;
     display: block;
-    margin-left: 550px;
+    margin-left: 200px;
    /* margin-right: 50px; */
   }
 
@@ -87,6 +87,7 @@ main {
   display: flex;
   width: 25vw;
   justify-content: space-around;
+  height: 100vh;
 }
 
 #friends {
@@ -153,6 +154,7 @@ width: 25vw;
   margin-right: 1em;
  margin-bottom: 1em;
  width: 100%;
+
 }
 
 #right {
@@ -161,6 +163,7 @@ border-radius: 2em;
 display: flex;
 width: 25vw;
 justify-content: space-around;
+height: 100vh;
 }
 
 
@@ -177,12 +180,12 @@ width: 25vw;
 }
 
 footer {
-  border-style: none;
-    background: #FAC0B6;
-    height: 6.5rem;   
-    text-align: center;
-    margin-top: auto;
-  }
+border-style: none;
+  background: #FAC0B6;
+  height: 6.5rem;
+  text-align: center;
+  margin-top: auto;
+}
 
 #chatContainer {
   border-style: none;
@@ -198,7 +201,7 @@ footer {
 }
 
 body{
-    background: #B3B3C8;
+    background: white;
     display: flex;
     flex-direction: column;
 }
@@ -289,4 +292,37 @@ border: none;
 .userPhoto {
   padding-bottom: 1em;
   padding-right: 1em;
+}
+
+.bodyContainer {
+  background-color: #B3B3C8;
+}
+
+#nav-container {
+  width: 25%;
+  height: 50px;
+}
+
+#add-task-btn {
+  color: white;
+  background-color: #0DB583;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  border: none;
+  margin-left: 22px;
+  margin-bottom: 20px;
+  }
+
+#cancel-event-btn {
+  color: white;
+  background-color: #0DB583;
+  font-family: 'Poppins', sans-serif;
+border: none;
+}
+
+#save-task-btn {
+  color: white;
+  background-color: #FAC0B6;
+  font-family: 'Poppins', sans-serif;
+border: none;
 }
