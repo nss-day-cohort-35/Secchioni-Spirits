@@ -47,22 +47,24 @@ const factoryHTML = {
     dashboardHTML() {
         return `
     <header>
-        <img class = "dashLogo" src="../src/scripts/images/bangazonLogo.png" alt="bangazonlogo" height="140" width="150">
+        <img class = "dashLogo" src="../src/scripts/images/bangazonLogo.png" alt="bangazonlogo" height="110" width="150">
     </header>
-
     <main>
       <div id="left">
-        <section id="friends"><h2>FRIENDS</h2>
+        <section id="friends">
+        <div class="intro">
+        <h2>FRIENDS</h2>
         <img class = "chatIcon" src="../src/scripts/images/friends.png" alt="bangazonlogo" height="90" width="80">
+        </div>
         </section>
         <!--ENDS left-->
       </div>
 
       <div id="mainSection">
         <div id="dashWelcome">
-          <h3>Welcome user</hr>
+          <h3>Welcome</h3>
           <img class = "userPhoto" src="../src/scripts/images/userTest2.png" alt="bangazonlogo" height="265" width="250">
-        </div>
+          </div>
 
         <section id="newsChat">
           <div id="chat">
@@ -90,16 +92,20 @@ const factoryHTML = {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Share News</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
       <fieldset id="news_HTML_Form">
-      <input id="news_title" type="text" placeholder="Title">
-      <input id="news_synopsis" type="text" placeholder="Synopsis">
-      <input id="news_url" type="url" placeholder="URL">
+      <label for="Title">News Title</label>
+      <input id="news_title" type="text" placeholder="Title"><br>
+      <label for="Title">News Synopsis</label>
+      <input id="news_synopsis" type="text" placeholder="Synopsis"><br>
+      <label for="Title">URL</label>
+      <input id="news_url" type="url" placeholder="URL"><br>
+      <label for="Title">News Date</label>
       <input id="news_date" type="date">
   </fieldset>
       </div>
@@ -113,7 +119,6 @@ const factoryHTML = {
 </div>
             <div id="newsFormContainer">
             </div>
-            <button id="add-news-btn">Add New Article</button>
             <div id="newsFormContainer"></div>
             <div id="newsCardsContainer"></div>
             </article>
@@ -122,7 +127,7 @@ const factoryHTML = {
         </section>
 
         <section id="events">
-        <div class="intro"
+        <div class="intro">
           <h2>EVENTS</h2>
           <img class = "newsLogo" src="../src/scripts/images/events.png" alt="bangazonlogo" height="90" width="80">
           </div>
@@ -134,11 +139,11 @@ const factoryHTML = {
       </div>
 
       <div id="right">
-        <section id="tasks"><h2>TASKS</h2>
-        <img class = "newsLogo" src="../src/scripts/images/tasks.png" alt="bangazonlogo" height="90" width="80">
-        <h2>TASKS</h2>
-        <img src="" alt="Tasks image" />
         <section id="tasks">
+        <div class="intro">
+        <h2>TASKS</h2>
+        <img class = "newsLogo" src="../src/scripts/images/tasks.png" alt="bangazonlogo" height="90" width="80">
+        </div>
         <div id="taskFormContainer">
         <button id="add-task-btn">Add New Task</button>
         <button id="see-todo-tasks-btn">View To Do List</button>

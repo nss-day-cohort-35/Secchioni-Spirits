@@ -62,15 +62,12 @@ p {
   }
 
   .dashLogo {
-    width: 290px;
-    height: 80px;
+    width: 250px;
+    height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 18px;
   }
-
-  
-
 header {
   background-color:white;
   display: flex;
@@ -83,7 +80,6 @@ main {
   flex-direction: row;
   justify-content: space-between;
   height: 100vh;
-  margin: 0;
 }
 
 #left {
@@ -120,19 +116,17 @@ width: 25vw;
   width: 50vw;
   background: #FAC0B6;
   display:flex;
-  position: relative;
+  justify-content: space-between;
+  padding-left: 20px;
 }
-.userPhoto {
-    align-content: right;
-    margin-left: 250px;
-}
+
 #chat {
   border-style: none;
   background: white;
   border-radius: 0.6em;
   display: flex;
   flex-direction: column;
-  width: 25vw;
+  width: 24vw;
 }
 
 #news {
@@ -140,13 +134,16 @@ width: 25vw;
   background: white;
   border-radius: 0.6em;
   display: flex;
-  width: 25vw;
+  width: 24vw;
   flex-direction: column;
+  margin-left: 1.6em;
 }
 
 #newsChat {
   display: flex;
   flex-direction: row;
+  align-content: center;
+
 }
 
 #events {
@@ -184,7 +181,7 @@ footer {
 border-style: none;
   background: #FAC0B6;
   width: 100%;
-  height: 2.5rem;   
+  height: 6.5rem;   
   text-align: center;
 }
 
@@ -227,6 +224,7 @@ background-color: #0DB583;
 font-family: 'Poppins', sans-serif;
 font-size: 15px;
 border: none;
+margin-left: 22px;
 }
 
 #save-news-btn {
@@ -251,3 +249,8 @@ border: none;
     font-size: 20px;
     border: none;
     }
+
+.userPhoto {
+  padding-bottom: 1em;
+  padding-right: 1em;
+}
