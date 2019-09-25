@@ -1,4 +1,4 @@
-(Bangazon_Illustration_readme.png)
+![Group Project](headerimage.png)
 
 # Nutshell: The Information Dashboard for 'Bangazon' Employees
 
