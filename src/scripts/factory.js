@@ -1,3 +1,6 @@
+import API from "./auth/data.js"
+
+
 const factoryHTML = {
     landingPageHTML() {
         return `
@@ -62,7 +65,7 @@ const factoryHTML = {
 
       <div id="mainSection">
         <div id="dashWelcome">
-          <h3>Welcome</h3>
+          <h3></h3>
           <img class = "userPhoto" src="../src/scripts/images/userTest2.png" alt="bangazonlogo" height="265" width="250">
           </div>
 
