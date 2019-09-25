@@ -77,8 +77,9 @@ const factoryHTML = {
             <h2>CHAT</h2>
             <img class = "chatIcon" src="../src/scripts/images/chat.png" alt="bangazonlogo" height="90" width="80">
             </div>
-            <article id="chatContainer">
-            <p>Hello World</p></article>
+            <article id="chatContainer"></article>
+            <article id="chatCardContainer"></article>
+            <button id="add-chat-btn" type="button">Add a New Message</button>
           </div>
 
           <div id="news">

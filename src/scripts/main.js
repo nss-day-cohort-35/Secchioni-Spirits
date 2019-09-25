@@ -4,6 +4,8 @@ import renderToDom from "./renderDom.js";
 import newsMain from "./articles/main-news.js";
 import tasksMain from "./tasks/tasks-main.js";
 import eventsMain from "./events/events-main.js";
+import chatMain from "./messages/chat-main.js";
+
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
@@ -23,6 +25,7 @@ if (!activeUser) {
 } else {
   renderToDom.renderDashboardDom();
   newsMain.invokeAllNewsFunctions();
+  chatMain.addEventListenerToAddMessagesButton()
 }
 
 //Event listener to populate registration or login form when links are clicked
@@ -79,6 +82,7 @@ overallContainer.addEventListener("click", event => {
 
             sessionStorage.setItem("activeUser", user.id); // sessionStorage is a builded method. It has different uses: we are using setItem to define the activeUser within the id number belonging to it, from the JSON database.
             renderToDom.renderDashboardDom();
+            chatMain.addEventListenerToAddMessagesButton()
             const message = document.querySelector("#dashWelcome")
             message.firstChild.textContent = `Welcome ${name}`
           });
@@ -103,13 +107,14 @@ overallContainer.addEventListener("click", event => {
         );
         if (users) {
           renderToDom.renderDashboardDom();
+          chatMain.addEventListenerToAddMessagesButton()
           sessionStorage.setItem("activeUser", users.id);
           newsMain.displayAllNews();
           const message = document.querySelector("#dashWelcome")
           message.firstChild.textContent = `Welcome ${username}`
         } else {
           let okPassword = confirm(
-            "Something\'s gone wrong. click 'Cancel' to try again OR 'OK' to register as a new user"
+            "Something\'s gone wrong. click `Cancel` to try again OR `OK` to register as a new user"
           );
           if (okPassword === true) {
             renderToDom.renderRegistrationDom()
@@ -132,6 +137,5 @@ be available all  the time not only in certain order (like adding new news)-you 
 have to have just logged in to add new news. */
 tasksMain.invokeAllTaskFunctions(); //Invoke all the functions for the task section
 
-
-
-eventsMain.invokeAllEventsFunctions(); //Invoke all the functions for the task section
+eventsMain.invokeAllEventsFunctions();
+chatMain.invokeAllChatFunctions();
