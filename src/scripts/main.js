@@ -103,7 +103,7 @@ overallContainer.addEventListener("click", event => {
           newsMain.displayAllNews();
         } else {
           let okPassword = confirm(
-            'Something\'s gone wrong. click "Cancel" to try again OR "OK" to register as a new user'
+            "Something\'s gone wrong. click 'Cancel' to try again OR 'OK' to register as a new user"
           );
           if (okPassword === true) {
             renderToDom.renderRegistrationDom();

@@ -86,6 +86,7 @@ const eventsMain = {
     const mainEventsContainer = document.querySelector("#container");
     mainEventsContainer.addEventListener("click", () => {
       if (event.target.id.split("--")[0] === "edit-events-btn") {
+        console.log("made it here")
         const eventsId = event.target.id.split("--")[1];
         apiEvents.getSingleEvents(eventsId).then(eventsObj => {
           renderEventsToDom.renderEventsEditForm(eventsObj);

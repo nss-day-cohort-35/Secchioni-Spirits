@@ -30,10 +30,9 @@ const tasksFactory = {   //This object has 4 functions that create HTML in the D
     addNewTaskButtonHtml() {  //Create the three buttons again!
         return `
       <button id="add-task-btn">Add New Task</button>
-      <button id="see-todo-tasks-btn">View To Do List</button>
+      <button type="button" id="see-todo-tasks-btn" class="btn"><i class="fas fa-list"></i>View To Do List</button>
       <button id="see-completed-tasks-btn">View Completed Tasks</button>
       `
     }
 }
-
 export default tasksFactory  //Export this to tasks-dom.js

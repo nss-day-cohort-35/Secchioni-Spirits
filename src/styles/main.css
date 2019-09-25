@@ -8,7 +8,7 @@ html {
     box-sizing: border-box;
 }
 
-#welcome { 
+#welcome {
     background: white;
 }
 
@@ -79,7 +79,6 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100vh;
 }
 
 #left {
@@ -178,12 +177,12 @@ width: 25vw;
 }
 
 footer {
-border-style: none;
-  background: #FAC0B6;
-  width: 100%;
-  height: 6.5rem;   
-  text-align: center;
-}
+  border-style: none;
+    background: #FAC0B6;
+    height: 6.5rem;   
+    text-align: center;
+    margin-top: auto;
+  }
 
 #chatContainer {
   border-style: none;
@@ -228,17 +227,54 @@ margin-left: 22px;
 }
 
 #save-news-btn {
-    color: white; 
+    color: white;
     background-color: #FAC0B6;
     font-family: 'Poppins', sans-serif;
 border: none;
 }
 
 #close-news-btn {
-    color: white; 
+    color: white;
     background-color: #0DB583;
     font-family: 'Poppins', sans-serif;
 border: none;
+}
+#addEventsButton {
+  color: white;
+  background-color: #0DB583;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  border: none;
+  margin-left: 22px;
+  margin-bottom: 20px;
+  }
+
+#close-news-btn {
+    color: white;
+    background-color: #0DB583;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border: none;
+    margin-left: 22px;
+    }
+
+    #save-events-btn {
+      color: white;
+      background-color: #FAC0B6;
+      font-family: 'Poppins', sans-serif;
+  border: none;
+  }
+
+#see-todo-tasks-btn {
+  background-color:none;
+  border: solid #F4C1B7;
+  border-radius: 1em;
+  color: #F4C1B7;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 #logout {

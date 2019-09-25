@@ -82,12 +82,12 @@ const factoryHTML = {
             <img class = "newsLogo" src="../src/scripts/images/news.png" alt="bangazonlogo" height="90" width="80">
             </div>
             <article>
-            <!-- Button trigger modal -->
+<!-- NEWS Button trigger modal -->
 <button type="button" class="btn btn-primary" id="add-news-btn" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-circle fa-1x"></i>
   Add New Article
 </button>
 
-<!-- Modal -->
+<!-- NEWS Modal FORM -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -131,7 +131,37 @@ const factoryHTML = {
           <h2>EVENTS</h2>
           <img class = "newsLogo" src="../src/scripts/images/events.png" alt="bangazonlogo" height="90" width="80">
           </div>
-          <button id="addEventsButton" type="button">Add Event</button>
+
+<!--------------------------------------- EVENTS Button trigger modal ---------------------------------------------->
+<button type="button" class="btn btn-primary" id="addEventsButton" data-toggle="modal" data-target="#createNewsModal"><i class="fas fa-plus-circle fa-1x"></i>
+  Add New Event
+</button>
+
+<!--EVENTS MODAL FORM-->
+<div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Your Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <fieldset id="events_HTML_Form">
+      <input id="events_title" type="text" placeholder="Title">
+      <input id="events_location" type="text" placeholder="Location">
+      <input id="events_date" type="date">
+  </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close-news-btn" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+        <button type="button" id="save-events-btn" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i>
+        Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
           <button id="showEventsButton" type="button">Show Events</button>
           <div id="eventsFormContainer"></div>
           <div id="eventsCardsContainer"></div>
