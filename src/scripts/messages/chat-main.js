@@ -1,6 +1,6 @@
 import apiChat from "./chat-data.js"
-import renderMessagesToDom from ".chat-dom.js"
-import chatFactory from "chat-factory.js"
+import renderMessagesToDom from "./chat-dom.js"
+import chatFactory from "./chat-factory.js"
 
 const chatMain = {
     addEventListenerToAddMessagesButton() {
