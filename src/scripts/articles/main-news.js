@@ -37,7 +37,7 @@ const newsMain = {
                     addNewsBtnContainer.innerHTML = newsFactory.addNewsButton()
                     apiNews.postNewNews(newNewsObj)
                         .then(response => {
-                            this.showNews()
+                            this.displayAllNews()
                         }
                         )
 
@@ -82,9 +82,7 @@ const newsMain = {
             }
         })
     },
-    showNews() {
-        this.displayAllNews()
-    },
+
     editNews() {
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", () => {
@@ -118,11 +116,10 @@ const newsMain = {
         })
     },
     invokeAllNewsFunctions() {
-        this.addEventListenerToAddNewsButton()
+        // this.addEventListenerToAddNewsButton()
         this.saveNewNews()
         this.deleteNews()
         this.editNews()
-        this.showNews()
     }
 }
 
