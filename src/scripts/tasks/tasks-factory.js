@@ -1,15 +1,13 @@
 const tasksFactory = {   //This object has 4 functions that create HTML in the DOM
-    newTaskFormHtml() {  //Create the fieldset with the tasks name and date and save and cancel button
-        return `
-      <fieldset id="new-task-form">
-        <input id="new-task-name" type="text" placeholder="Task Name">
-        <label>Expected Completion Date: </label>
-        <input id="new-task-date" type="date" placeholder="">
-        <button id="save-task-btn">Save New Task</button>
-        <button id="cancel-task-btn">Cancel</button>
-        </fieldset>
-        `
-    },
+    // newTaskFormHtml() {  //Create the fieldset with the tasks name and date and save and cancel button
+    //     return `
+    //   <fieldset id="new-task-form">
+    //     <input id="new-task-name" type="text" placeholder="Task Name">
+    //     <label>Expected Completion Date: </label>
+    //     <input id="new-task-date" type="date" placeholder="">
+    //     </fieldset>
+    //     `
+    // },
     taskCardHtml(taskObj) {   //Create the task card html, make sure to separate each id with -- in order to target the id for editing purpose!!!
         return `
         <div id="taskCard--${taskObj.id}" class="taskCard">
@@ -29,11 +27,9 @@ const tasksFactory = {   //This object has 4 functions that create HTML in the D
     },
     addNewTaskButtonHtml() {  //Create the three buttons again!
         return `
-      <button id="add-task-btn">Add New Task</button>
       <button id="see-todo-tasks-btn">View To Do List</button>
       <button id="see-completed-tasks-btn">View Completed Tasks</button>
       `
     }
 }
-
 export default tasksFactory  //Export this to tasks-dom.js

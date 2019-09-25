@@ -1,3 +1,6 @@
+import API from "./auth/data.js"
+
+
 const factoryHTML = {
     landingPageHTML() {
         return `
@@ -12,7 +15,8 @@ const factoryHTML = {
         <img src="../src/scripts/images/Bangazon_Illustration.png" alt="gradilogo" height="700" width="1000">
         </div>
         </div>
-      </div>`;
+      </div>
+      `;
     },
     registerHTML() {
         return `
@@ -46,6 +50,7 @@ const factoryHTML = {
     },
     dashboardHTML() {
         return `
+        <div class="bodyContainer">
     <header>
         <img class = "dashLogo" src="../src/scripts/images/bangazonLogo.png" alt="bangazonlogo" height="110" width="150">
     </header>
@@ -62,7 +67,7 @@ const factoryHTML = {
 
       <div id="mainSection">
         <div id="dashWelcome">
-          <h3>Welcome</h3>
+          <h3></h3>
           <img class = "userPhoto" src="../src/scripts/images/userTest2.png" alt="bangazonlogo" height="265" width="250">
           </div>
 
@@ -83,12 +88,12 @@ const factoryHTML = {
             <img class = "newsLogo" src="../src/scripts/images/news.png" alt="bangazonlogo" height="90" width="80">
             </div>
             <article>
-            <!-- Button trigger modal -->
+<!-- NEWS Button trigger modal -->
 <button type="button" class="btn btn-primary" id="add-news-btn" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-circle fa-1x"></i>
   Add New Article
 </button>
 
-<!-- Modal -->
+<!-- NEWS Modal FORM -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -132,7 +137,37 @@ const factoryHTML = {
           <h2>EVENTS</h2>
           <img class = "newsLogo" src="../src/scripts/images/events.png" alt="bangazonlogo" height="90" width="80">
           </div>
-          <button id="addEventsButton" type="button">Add Event</button>
+
+<!--------------------------------------- EVENTS Button trigger modal ---------------------------------------------->
+<button type="button" class="btn btn-primary" id="addEventsButton" data-toggle="modal" data-target="#createNewsModal"><i class="fas fa-plus-circle fa-1x"></i>
+  Add New Event
+</button>
+
+<!--EVENTS MODAL FORM-->
+<div class="modal fade" id="createNewsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Your Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <fieldset id="events_HTML_Form">
+      <input id="events_title" type="text" placeholder="Title">
+      <input id="events_location" type="text" placeholder="Location">
+      <input id="events_date" type="date">
+  </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close-news-btn" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+        <button type="button" id="save-events-btn" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i>
+        Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
           <button id="showEventsButton" type="button">Show Events</button>
           <div id="eventsFormContainer"></div>
           <div id="eventsCardsContainer"></div>
@@ -146,8 +181,39 @@ const factoryHTML = {
         <h2>TASKS</h2>
         <img class = "newsLogo" src="../src/scripts/images/tasks.png" alt="bangazonlogo" height="90" width="80">
         </div>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="add-task-btn" data-toggle="modal" data-target="#newTaskModal"><i class="fas fa-plus-circle fa-1x"></i>
+  Add New Task
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="newTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <fieldset id="new-task-form">
+        <label>Task Name: </label>
+        <input id="new-task-name" type="text" placeholder="Enter your task name"><br>
+        <label>Expected Completion Date: </label>
+        <input id="new-task-date" type="date" placeholder="">
+        </fieldset>
+  </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel-event-btn" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i> Close</button>
+        <button type="button" id="save-task-btn" class="btn btn-primary" data-dismiss="modal"><i class="far fa-save"></i>
+        Save Task</button>
+      </div>
+    </div>
+  </div>
+</div>
         <div id="taskFormContainer">
-        <button id="add-task-btn">Add New Task</button>
         <button id="see-todo-tasks-btn">View To Do List</button>
         <button id="see-completed-tasks-btn">View Completed Tasks</button></div>
         <div id="taskCardsContainer"></div>
@@ -159,6 +225,7 @@ const factoryHTML = {
       <p>Footer Copyright</p>
       <button id="logout" type="button"><i class="fas fa-sign-out-alt"></i>Log Out</button>
     </footer>
+    </div>
         `;
     }
 };

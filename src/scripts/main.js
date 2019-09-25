@@ -17,6 +17,7 @@ const overallContainer = document.querySelector("#container");
 
 //Converting string of activeUser into a number
 const activeUser = parseInt(sessionStorage.getItem("activeUser"));
+
 //If there is not an active user, populate the registration form
 if (!activeUser) {
   renderToDom.renderLandingDom();
@@ -82,6 +83,8 @@ overallContainer.addEventListener("click", event => {
             sessionStorage.setItem("activeUser", user.id); // sessionStorage is a builded method. It has different uses: we are using setItem to define the activeUser within the id number belonging to it, from the JSON database.
             renderToDom.renderDashboardDom();
             chatMain.addEventListenerToAddMessagesButton()
+            const message = document.querySelector("#dashWelcome")
+            message.firstChild.textContent = `Welcome ${name}`
           });
         }
       });
@@ -100,18 +103,22 @@ overallContainer.addEventListener("click", event => {
           return (
             usersObj.userName === username && usersObj.password === password
           );
-        });
+        }
+        );
         if (users) {
           renderToDom.renderDashboardDom();
           chatMain.addEventListenerToAddMessagesButton()
           sessionStorage.setItem("activeUser", users.id);
           newsMain.displayAllNews();
+          const message = document.querySelector("#dashWelcome")
+          message.firstChild.textContent = `Welcome ${username}`
         } else {
           let okPassword = confirm(
             "Something\'s gone wrong. click `Cancel` to try again OR `OK` to register as a new user"
           );
           if (okPassword === true) {
-            renderToDom.renderRegistrationDom();
+            renderToDom.renderRegistrationDom()
+            newsMain.invokeAllNewsFunctions();
           }
         }
       });
@@ -128,7 +135,6 @@ dom and else check if they are clicking register and login. we need to call thin
 the correct order of operation. right now it is specific like a,b,c but it some steps should
 be available all  the time not only in certain order (like adding new news)-you shouldn't
 have to have just logged in to add new news. */
-tasksMain.invokeAllTaskFunctions()  //Invoke all the functions for the task section
 tasksMain.invokeAllTaskFunctions(); //Invoke all the functions for the task section
 
 eventsMain.invokeAllEventsFunctions();
