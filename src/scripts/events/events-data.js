@@ -1,5 +1,5 @@
 const apiEvents = {
-  postNewNews: eventsObj => {
+  postNewEvents: eventsObj => {
     return fetch("http://localhost:8088/events", {
       method: "POST",
       headers: {

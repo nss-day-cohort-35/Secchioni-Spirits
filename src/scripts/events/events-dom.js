@@ -1,12 +1,12 @@
-import eventsFactory from "./events-factory";
+import eventsFactory from "./events-factory.js";
 
 const renderEventsToDom = {
   addEventsForm() {
-    const eventsContainer = document.querySelector("#events");
+    const eventsContainer = document.querySelector("#eventsFormContainer");
     eventsContainer.innerHTML = eventsFactory.eventsHtmlForm();
   },
   renderEventsToDom(htmlString) {
-    const eventsContainer = document.querySelector("#events");
+    const eventsContainer = document.querySelector("#eventsCardsContainer");
     eventsContainer.innerHTML += htmlString;
   },
   renderEventsEditForm(eventsObj) {

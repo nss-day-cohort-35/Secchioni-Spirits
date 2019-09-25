@@ -76,9 +76,10 @@ const factoryHTML = {
 
         <section id="events">
           <h2>EVENTS</h2>
-          <div id="event1"></div>
-          <div id="event2"></div>
-          <div id="event3"></div>
+          <button id="addEventsButton" type="button">Add Event</button>
+          <button id="showEventsButton" type="button">Show Events</button>
+          <div id="eventsFormContainer"></div>
+          <div id="eventsCardsContainer"></div>
         </section>
         <!--ENDS mainSection div-->
       </div>
