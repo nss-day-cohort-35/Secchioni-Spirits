@@ -6,7 +6,6 @@ const newsFactory = {
             <input id="news_synopsis" type="text" placeholder="Synopsis">
             <input id="news_url" type="url" placeholder="URL">
             <input id="news_date" type="date">
-            <button id="save-news-btn" type="button">Save New Article</button>
             <button id="cancel-news-btn" type="button">Cancel</button>
         </fieldset>
 `
