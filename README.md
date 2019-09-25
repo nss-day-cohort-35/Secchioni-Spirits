@@ -24,4 +24,4 @@
 
 ### Database Diagram
 
-![nutshell features](./DBdiagram.png)
+![nutshell features](/DBdiagram.png)
