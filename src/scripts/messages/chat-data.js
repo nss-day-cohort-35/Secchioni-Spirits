@@ -1,21 +1,21 @@
 const apiChat = {
     postNewChats: (chatObj) => {
-        return fetch("http://localhost:8088/articles", {
+        return fetch("http://localhost:8088/messages", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",   
-            }, 
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(chatObj)
         })
         .then(Response => Response.json())
     },
     displayAllChats: (userId) => {
-        return fetch(`http://localhost:8088/articles?_sort=chats_date&_order=desc&userId=${userId}`)
+        return fetch(`http://localhost:8088/messages?_sort=chats_date&_order=desc&userId=${userId}`)
         .then(Response => Response.json())
     },
     deleteChats(id) {
-        return fetch(`http://localhost:8088/articles/${id}`, {
-            method: "DELETE", 
+        return fetch(`http://localhost:8088/messages/${id}`, {
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -23,16 +23,16 @@ const apiChat = {
             .then(Response => Response.json())
     },
     editChats(chatObj) {
-        return fetch(`http://localhost:8088/articles/${chatObj.id}`,{
+        return fetch(`http://localhost:8088/messages/${chatObj.id}`,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
-            }, 
+            },
             body: JSON.stringify(chatObj)
         })
     },
     getSingleChats(id) {
-        return fetch(`http://localhost:8088/articles/${id}`)
+        return fetch(`http://localhost:8088/messages/${id}`)
         .then(Response => Response.json())
     }
 }

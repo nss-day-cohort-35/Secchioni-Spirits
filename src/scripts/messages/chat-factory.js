@@ -4,9 +4,8 @@ const chatFactory = {
         <fieldset id="chat_HTML_Form">
             <input id="chat_title" type="text" placeholder="Title">
             <input id="chat_message" type="text" placeholder="Message">
-            <input id="message_date" type="date">
-            <button id="post-message-btn" type="button">Post New Message</button>
-            <button id="cancel-message-btn" type="button">Cancel</button>
+            <input id="chat_date" type="date">
+            <button id="post-chat-btn" type="button">Post The Message!</button>
         </fieldset>
         `
 },
@@ -22,7 +21,7 @@ chatCardHtml(messages) {
     </div>
     `
 },
-addMessageButton() {
+removeMessageButton() {
     return ""
 },
 editMessageHtml(chatObj) {
@@ -34,6 +33,9 @@ editMessageHtml(chatObj) {
     <button id="save-chat-edits-btn--${chatObj.id}">Save Changes</button>
 </fieldset>`
 },
+addMessageButton(){
+    return `<button id="add-chat-btn" type="button">Add a New Message</button>`
+}
 }
 
 export default chatFactory
