@@ -32,5 +32,4 @@ const tasksFactory = {   //This object has 4 functions that create HTML in the D
       `
     }
 }
-
 export default tasksFactory  //Export this to tasks-dom.js
