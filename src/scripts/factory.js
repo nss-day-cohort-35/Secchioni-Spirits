@@ -113,6 +113,8 @@ const factoryHTML = {
 </div>
             <div id="newsFormContainer">
             </div>
+            <button id="add-news-btn">Add New Article</button>
+            <div id="newsFormContainer"></div>
             <div id="newsCardsContainer"></div>
             </article>
           </div>
@@ -134,6 +136,14 @@ const factoryHTML = {
       <div id="right">
         <section id="tasks"><h2>TASKS</h2>
         <img class = "newsLogo" src="../src/scripts/images/tasks.png" alt="bangazonlogo" height="90" width="80">
+        <h2>TASKS</h2>
+        <img src="" alt="Tasks image" />
+        <section id="tasks">
+        <div id="taskFormContainer">
+        <button id="add-task-btn">Add New Task</button>
+        <button id="see-todo-tasks-btn">View To Do List</button>
+        <button id="see-completed-tasks-btn">View Completed Tasks</button></div>
+        <div id="taskCardsContainer"></div>
         </section>
       </div>
     </main>
