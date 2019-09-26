@@ -1,39 +1,28 @@
-const apiChat = {
-    postNewChats: (chatObj) => {
+const messagesData = {
+    postNewMessage(messageObj) {
         return fetch("http://localhost:8088/messages", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(chatObj)
+            body: JSON.stringify(messageObj)
         })
-        .then(Response => Response.json())
+            .then(newMessage => newMessage.json())
     },
-    displayAllChats: (userId) => {
-        return fetch(`http://localhost:8088/messages?_sort=chats_date&_order=desc&userId=${userId}`)
-        .then(Response => Response.json())
+    getMessages() {
+        return fetch("http://localhost:8088/messages")
+            .then(messages => messages.json())
     },
-    deleteChats(id) {
+    deleteMessage(id) {
         return fetch(`http://localhost:8088/messages/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             },
+
         })
-            .then(Response => Response.json())
+            .then(newMessage => newMessage.json())
     },
-    editChats(chatObj) {
-        return fetch(`http://localhost:8088/messages/${chatObj.id}`,{
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(chatObj)
-        })
-    },
-    getSingleChats(id) {
-        return fetch(`http://localhost:8088/messages/${id}`)
-        .then(Response => Response.json())
-    }
 }
-export default apiChat
+
+export default messagesData

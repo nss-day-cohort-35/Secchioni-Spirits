@@ -10,7 +10,7 @@ const apiNews = {
         .then(Response => Response.json())
     },
     displayAllNews: (userId) => {
-        return fetch(`http://localhost:8088/articles?_sort=news_date&_order=desc&userId=${userId}`)
+        return fetch(`http://localhost:8088/articles?_sort=news_date&_order=asce&userId=${userId}`)
         .then(Response => Response.json())
     },
     deleteNews(id) {

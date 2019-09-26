@@ -4,7 +4,7 @@ import renderToDom from "./renderDom.js";
 import newsMain from "./articles/main-news.js";
 import tasksMain from "./tasks/tasks-main.js";
 import eventsMain from "./events/events-main.js";
-import chatMain from "./messages/chat-main.js";
+import messagesMain from "./messages/chat-main.js";
 
 /*
     Import all the tools into main.js that are needed to display
@@ -24,8 +24,7 @@ if (!activeUser) {
   //If there IS an active user, populate the log in form
 } else {
   renderToDom.renderDashboardDom();
-  newsMain.invokeAllNewsFunctions();
-  chatMain.addEventListenerToAddMessagesButton()
+  //newsMain.invokeAllNewsFunctions();
 }
 
 //Event listener to populate registration or login form when links are clicked
@@ -82,7 +81,7 @@ overallContainer.addEventListener("click", event => {
 
             sessionStorage.setItem("activeUser", user.id); // sessionStorage is a builded method. It has different uses: we are using setItem to define the activeUser within the id number belonging to it, from the JSON database.
             renderToDom.renderDashboardDom();
-            chatMain.addEventListenerToAddMessagesButton()
+            //newsMain.invokeAllNewsFunctions()
             const message = document.querySelector("#dashWelcome")
             message.firstChild.textContent = `Welcome ${name}`
           });
@@ -107,9 +106,8 @@ overallContainer.addEventListener("click", event => {
         );
         if (users) {
           renderToDom.renderDashboardDom();
-          chatMain.addEventListenerToAddMessagesButton()
           sessionStorage.setItem("activeUser", users.id);
-          newsMain.displayAllNews();
+          //newsMain.invokeAllNewsFunctions()
           const message = document.querySelector("#dashWelcome")
           message.firstChild.textContent = `Welcome ${username}!
           We are so glad you are here!`
@@ -119,7 +117,6 @@ overallContainer.addEventListener("click", event => {
           );
           if (okPassword === true) {
             renderToDom.renderRegistrationDom()
-            newsMain.invokeAllNewsFunctions();
           }
         }
       });
@@ -137,6 +134,7 @@ the correct order of operation. right now it is specific like a,b,c but it some 
 be available all  the time not only in certain order (like adding new news)-you shouldn't
 have to have just logged in to add new news. */
 tasksMain.invokeAllTaskFunctions(); //Invoke all the functions for the task section
-
 eventsMain.invokeAllEventsFunctions();
-chatMain.invokeAllChatFunctions();
+messagesMain.callAllMessageMethods();
+newsMain.invokeAllNewsFunctions();
+

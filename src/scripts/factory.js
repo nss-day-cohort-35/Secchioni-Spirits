@@ -1,9 +1,9 @@
-import API from "./auth/data.js"
+
 
 
 const factoryHTML = {
-    landingPageHTML() {
-        return `
+  landingPageHTML() {
+    return `
         <div id="welcome">
         <div id="logo"></div>
         <h1>Welcome to Bangazon!</h1>
@@ -16,10 +16,9 @@ const factoryHTML = {
         </div>
       </div>
       `;
-    },
-    registerHTML() {
-        return `
-
+  },
+  registerHTML() {
+    return `
         <form class="registration">
         <fieldset>
         <label for="name">First and Last name:</label>
@@ -34,9 +33,9 @@ const factoryHTML = {
         </fieldset>
         </form>
         `;
-    },
-    loginHTML() {
-        return `
+  },
+  loginHTML() {
+    return `
         <form class="login">
         <fieldset>
         <label for="username">Username:</label>
@@ -47,9 +46,9 @@ const factoryHTML = {
         </fieldset>
         </form>
         `;
-    },
-    dashboardHTML() {
-        return `
+  },
+  dashboardHTML() {
+    return `
         <div class="bodyContainer">
     <header>
         <img class = "dashLogo" src="../src/scripts/images/bangazonLogo.png" alt="bangazonlogo" height="110" width="150">
@@ -74,13 +73,13 @@ const factoryHTML = {
 
         <section id="newsChat">
           <div id="chat">
-          <div class="intro"
+          <div class="intro">
             <h2>CHAT</h2>
             <img class = "chatIcon" src="../src/scripts/images/chat.png" alt="bangazonlogo" height="90" width="80">
             </div>
-            <article id="chatContainer"></article>
-            <article id="chatCardContainer"></article>
-            <button id="add-chat-btn" type="button"><i class="fas fa-plus-circle fa-1x"></i> Add a New Message</button>
+            <article id="messageCardsContainer"></article>
+            <article id="messageFormContainer"></article>
+            <button id="add-message-btn" type="button">Add a New Message</button>
           </div>
 
           <div id="news">
@@ -91,8 +90,9 @@ const factoryHTML = {
             <article>
 <!-- NEWS Button trigger modal -->
 <button type="button" class="btn btn-primary" id="add-news-btn" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-circle fa-1x"></i>
-  Add New Article
-</button>
+  Add a news
+  </button>
+<button type="button" class="btn btn-primary" id="see-news-btn">See all news</button>
 
 <!-- NEWS Modal FORM -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -231,7 +231,7 @@ const factoryHTML = {
     </footer>
     </div>
         `;
-    }
+  }
 };
 
 export default factoryHTML;
