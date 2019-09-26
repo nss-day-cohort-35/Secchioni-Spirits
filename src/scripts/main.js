@@ -111,7 +111,8 @@ overallContainer.addEventListener("click", event => {
           sessionStorage.setItem("activeUser", users.id);
           newsMain.displayAllNews();
           const message = document.querySelector("#dashWelcome")
-          message.firstChild.textContent = `Welcome ${username}`
+          message.firstChild.textContent = `Welcome ${username}!
+          We are so glad you are here!`
         } else {
           let okPassword = confirm(
             "Something\'s gone wrong. click `Cancel` to try again OR `OK` to register as a new user"

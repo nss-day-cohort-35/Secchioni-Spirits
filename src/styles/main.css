@@ -10,8 +10,24 @@ html {
 
 #welcome {
     background: white;
+    font-family: 'Poppins', sans-serif;
+    color: #04B783;
+    margin-left: 60px;
+    margin-top: 20px;
+    text-transform: uppercase;
 }
 
+.introText {
+  font-family: 'Poppins', sans-serif;
+}
+
+#landingRegister  {
+  color: white;
+  background-color: #FAC0B6;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  margin-right: 20px;
+}
 h1 {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
@@ -19,7 +35,6 @@ h1 {
     text-transform: uppercase;
     font-size: 55px;
     color: #04B783;
-    margin-left: 60px;
     padding-top: 50px;
 }
 
@@ -31,7 +46,7 @@ h2 {
     font-size: 30px;
     color: #FAC0B6;
     padding-top: 15px;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 
 h3 {
@@ -42,12 +57,52 @@ h3 {
     font-size: 30px;
     color: white;
     padding-top: 15px;
-    padding-left: 15px;
+    padding-left: 10px;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 20px;
+  color: #04B783;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+p  {
+  padding-left: 10px;<label for="Events">Event Name</label>
+}
+
+#chatContainer  {
+  background:#FFD974;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+#chatHTMLForm  {
+  border: solid red;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#eventsCardsContainer {
+  margin-left: 20px;
 }
 
 p {
     font-family: 'Raleway', sans-serif;
 
+}
+
+hr {
+  color: yellow;
 }
 
 .landingImage {
@@ -110,14 +165,17 @@ width: 25vw;
 
 #dashWelcome {
   border-radius: 0.6em;
-  background:white;
-  margin-top: 0.8em;
+  margin-top: 0.3em;
   margin-bottom: 0.8em;
   width: 50vw;
   background: #FAC0B6;
   display:flex;
   justify-content: space-between;
   padding-left: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 30px;
+  padding-top: 50px;
 }
 
 #chat {
@@ -194,10 +252,13 @@ border-style: none;
 
 #newsContainer {
   border-style: solid;
+  overflow: scroll;
+  margin-left: 20px;
 }
 #newsCardsContainer {
   overflow: auto;
   height: 500px;
+  margin-left: 20px;
 }
 
 body{
@@ -220,19 +281,44 @@ body{
     padding-right: 20px;
 }
 
+#add-chat-btn {
+  color: white;
+  background-color: #0DB583;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  font-size: 15px;
+  border: none;
+  margin-left: 22px;
+  border-radius: 3px;
+  width: 190px;
+  height: 35px;
+  text-align: left;
+  margin-top: 10px;
+  }
+
+#chatCardContainer  {
+  margin-left: 20px;
+}
+
+#taskCardsContainer  {
+  margin-left: 20px;
+}
+
 #add-news-btn {
 color: white;
 background-color: #0DB583;
 font-family: 'Poppins', sans-serif;
+border: none;
 font-size: 15px;
 border: none;
 margin-left: 22px;
+margin-bottom: 20px;
 }
 
 #save-news-btn {
-    color: white;
-    background-color: #FAC0B6;
-    font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: #FAC0B6;
+  font-family: 'Poppins', sans-serif;
 border: none;
 }
 
@@ -242,6 +328,15 @@ border: none;
     font-family: 'Poppins', sans-serif;
 border: none;
 }
+
+#post-chat-btn {
+  color: white;
+  background-color: #FAC0B6;
+  font-family: 'Poppins', sans-serif;
+border: none;
+margin-top: 15px;
+}
+
 #addEventsButton {
   color: white;
   background-color: #0DB583;
@@ -293,6 +388,17 @@ border: none;
   padding-right: 5px;
 }
 
+#showEventsButton {
+  background-color:none;
+  border: solid #F4C1B7;
+  border-radius: 1em;
+  color: #F4C1B7;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  height: 40px;
+}
+
 
 #logout {
     color: white;
@@ -339,4 +445,16 @@ border: none;
   background-color: #FAC0B6;
   font-family: 'Poppins', sans-serif;
 border: none;
+}
+
+#delete-message-btn{
+  color: white;
+  background-color: #FAC0B6;
+  font-family: 'Poppins', sans-serif;
+border: none;
+}
+
+.newFeatureImage {
+margin-left: 20px;
+margin-top: 120px;
 }

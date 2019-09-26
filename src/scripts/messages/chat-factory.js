@@ -2,8 +2,11 @@ const chatFactory = {
     chatHtmlForm(){
         return `
         <fieldset id="chat_HTML_Form">
+        <label for="Title">Chat Subject</label><br>
             <input id="chat_title" type="text" placeholder="Title">
-            <input id="chat_message" type="text" placeholder="Message">
+            <label for="chat_message">What Do You Want to Say?</label><br>
+            <input id="chat_message" type="text" placeholder="Message"><br>
+            <label for="Date">Today's Date</label><br>
             <input id="chat_date" type="date">
             <button id="post-chat-btn" type="button">Post The Message!</button>
         </fieldset>
@@ -34,7 +37,8 @@ editMessageHtml(chatObj) {
 </fieldset>`
 },
 addMessageButton(){
-    return `<button id="add-chat-btn" type="button">Add a New Message</button>`
+    return `<button id="add-chat-btn" type="button">
+    Add a New Message</button>`
 }
 }
 

@@ -2,7 +2,7 @@ const eventsFactory = {
   eventsHtmlForm() {
     return `
         <fieldset id="events_HTML_Form">
-            <input id="events_title" type="text" placeholder="Title">
+        <input id="events_title" type="text" placeholder="Title">
             <input id="events_location" type="text" placeholder="Location">
             <input id="events_date" type="date">
             <button id="save-events-btn" type="button">Save New Event</button>
