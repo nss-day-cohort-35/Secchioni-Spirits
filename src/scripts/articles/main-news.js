@@ -3,12 +3,11 @@ import renderNewsToDom from "./news-dom"
 import newsFactory from "./news-factory.js"
 
 const newsMain = {
-    addEventListenerToAddNewsButton() {
+    addEventListenerToDisplayNews() {
         const mainContainer = document.querySelector("#container")
         mainContainer.addEventListener("click", () => {
-            if (event.target.id === "add-news-btn") {
-                renderNewsToDom.addNewsForm()
-                this.cancelNewsForm()
+            if (event.target.id === "see-news-btn") {
+                this.displayAllNews()
 
             }
         })
@@ -116,7 +115,7 @@ const newsMain = {
         })
     },
     invokeAllNewsFunctions() {
-        // this.addEventListenerToAddNewsButton()
+        this.addEventListenerToDisplayNews()
         this.saveNewNews()
         this.deleteNews()
         this.editNews()

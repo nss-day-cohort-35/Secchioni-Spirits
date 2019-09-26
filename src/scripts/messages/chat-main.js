@@ -1,112 +1,104 @@
-import apiChat from "./chat-data.js"
-import renderMessagesToDom from "./chat-dom.js"
-import chatFactory from "./chat-factory.js"
+import messagesFactory from "./chat-factory"
+import renderMessagesToDom from "./chat-dom"
+import messagesData from "./chat-data"
 
-const chatMain = {
-    addEventListenerToAddMessagesButton() {
-        const chatContainer = document.querySelector("#container")
-        chatContainer.addEventListener("click", (event) => {
-            if (event.target.id === "add-chat-btn"){
-                renderMessagesToDom.addChatForm()
-                // this.cancelChatForm()
+const messagesMain = {
+    addEventListenerToAddMessageButton() {
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => {
+            if (event.target.id === "add-message-btn") {
+                renderMessagesToDom.renderAddMessageForm()
             }
         })
     },
-    saveNewChat() {
-        const chatContainer = document.querySelector("#container")
-        chatContainer.addEventListener("click", () => {
-            if(event.target.id === "post-chat-btn") {
-                const newChatTitle = document.querySelector("#chat_title").value
-                const newChatMessage = document.querySelector("#chat_message").value
-                const newChatDate = document.querySelector("#chat_date").value
-                if (newChatTitle !== "" && newChatMessage !== "" && newChatDate !== "") {
+    saveNewMessage() {
+        const saveMessageFunction = () => {
+            if (event.target.id === "post-message-btn") {
+                const newMessage = document.querySelector("#message-text").value
+                if (newMessage !== "") {
                     const activeUser = parseInt(sessionStorage.getItem("activeUser"))
-
-                    const newChatObj = {
-                        chat_title: newChatTitle,
-                        chat_message: newChatMessage,
-                        chat_date: newChatDate,
-                        userID: activeUser
+                    const messageDate = new Date()
+                    const newMessageObj = {
+                        message: newMessage,
+                        date: messageDate,
+                        userId: activeUser
                     }
-                    // const addChatBtnContainer = document.querySelector("#chatContainer")
-                    // addChatBtnContainer.innerHTML = chatFactory.addChatButton()
-                    apiChat.postNewChats(newChatObj)
-                        .then(response => {
-                            this.displayAllChats()
-                        }
-                        )
+                    messagesData.postNewMessage(newMessageObj)
+                        .then(messagesData.getMessages)
+                        .then(allMessages => {
+                            document.querySelector("#messageCardsContainer").innerHTML = ""
+                            allMessages.forEach(message => {
+                                const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+                                if (activeUser === message.userId) {
+                                    const messagesHtml = messagesFactory.messageCardHtml(message)
+                                    renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                                    mainContainer.removeEventListener("click", saveMessageFunction)
+                                }
+                                else {
+                                    const messagesHtml = messagesFactory.messageCardHtml(message)
+                                    renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                                    mainContainer.removeEventListener("click", saveMessageFunction)
+                                }
+                            })
+                        })
+                    document.querySelector("#messageFormContainer").innerHTML = messagesFactory.reRenderButton()
                 }
                 else {
-                    alert("please fill out form")
+                    alert("don't you wanna post nothing?")
                 }
             }
-        })
+        }
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => saveMessageFunction())
     },
-    // cancelChatForm() {
-    //     const cancelChatBtn = document.querySelector("#cancel-chat-btn")
-    //     const addChatBtnContainer = document.querySelector("#chatContainer")
-    //     cancelChatBtn.addEventListener("click", () => {
-    //         addChatBtnContainer.innerHTML = chatFactory.addChatButton()
-    //     })
-    // },
-    displayAllChats() {
-        const activeUser = parseInt(sessionStorage.getItem("activeUser"))
-        apiChat.displayAllChats(activeUser)
-        .then(response => {
-            document.querySelector("#chatCardContainer").innerHTML = ""
-            response.forEach(chats => {
-                const formatNewDate = new Date(chat.chat_date).toLocaleDateString()
-                chat.chat_date = formatNewDate
-                const chatHTML = chatFactory.chatCardHtml(chats)
-                renderMessagesToDom.renderMessagesToDom(chatHTML)
-            })
-        })
-    },
-    deleteChats() {
-        const chatContainer = document.querySelector("#container")
-        chatContainer.addEventListener("click", (event) => {
-            if (event.target.id.split("delete-chat-btn")[0]) {
-                const chatId = event.target.id.split("--")[1]
-                document.querySelector("#chatCardContainer").innerHTML = "";
-                apiChat.deleteChats(chatId)
-                    .then(this.displayAllChats)
-            }
-        })
-    },
-
-    editChats(){
-        const chatContainer = document.querySelector("#chatContainer")
-        chatContainer.addEventListener("click", () => {
-            if (event.target.id.split("--")[0] === "edit-chat-btn") {
-                const chatId = event.target.id.split("--")[1]
-                apiChat.getSingleChat(chatId)
-                    .then((chatObj) => {
-                        renderMessagesToDom.renderMessageEditForm(chatObj)
+    deleteMessage() {
+        const mainContainer = document.querySelector("#container")
+        mainContainer.addEventListener("click", () => {
+            if (event.target.id.split("--")[0] === "delete-message-btn") {
+                const messageId = event.target.id.split("--")[1]
+                messagesData.deleteMessage(messageId)
+                    .then(messagesData.getMessages)
+                    .then(allMessages => {
+                        document.querySelector("#messageCardsContainer").innerHTML = ""
+                        allMessages.forEach(message => {
+                            const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+                            if (activeUser === message.userId) {
+                                const messagesHtml = messagesFactory.messageCardHtml(message)
+                                renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                                renderMessagesToDom.renderEditAndDeleteButtons(message)
+                            }
+                            else {
+                                const messagesHtml = messagesFactory.messageCardHtml(message)
+                                renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                            }
+                        })
                     })
-            }
-            else if (event.target.id.split("--")[0] === "save-chat-edits-btn") {
-                const editChatTitle = document.querySelector("#edit-chat-title").value
-                const editChatMessage = document.querySelector("#edit-chat-message").value
-                const editChatDate = document.querySelector("#edit-chat-date").value
-                const updateChat = {
-                    chat_title: editChatTitle,
-                    chat_message: editChatMessage,
-                    chat_date: editChatDate,
-                    userId: activeUser,
-                    id: chatId
-                }
-                document.querySelector("#chatCardContainer").innerHTML = ""
-                apiChat.editChats(updateChat).then(this.displayAllChats)
+
             }
         })
     },
-    invokeAllChatFunctions() {
-        this.addEventListenerToAddMessagesButton()
-        this.saveNewChat()
-        this.deleteChats()
-        // this.editChats()
-        // this.showChat()
+    displayAllMessages() {
+        messagesData.getMessages()
+            .then(allMessages => {
+                document.querySelector("#messageCardsContainer").innerHTML = ""
+                allMessages.forEach(message => {
+                    const activeUser = parseInt(sessionStorage.getItem("activeUser"))
+                    if (activeUser === message.userId) {
+                        const messagesHtml = messagesFactory.messageCardHtml(message)
+                        renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                    }
+                    else {
+                        const messagesHtml = messagesFactory.messageCardHtml(message)
+                        renderMessagesToDom.renderMessagesToDom(messagesHtml)
+                    }
+                })
+            })
+    },
+    callAllMessageMethods() {
+        this.deleteMessage()
+        this.saveNewMessage()
+        this.addEventListenerToAddMessageButton()
     }
 }
 
-export default chatMain
+export default messagesMain
