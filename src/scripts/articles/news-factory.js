@@ -20,6 +20,7 @@ const newsFactory = {
             <p>${articles.news_time}</p>
             <button id="edit-news-btn--${articles.id}">Edit</button>
             <button id="delete-news-btn--${articles.id}">Delete</button>
+            <hr>
         </div>
         `
     },
