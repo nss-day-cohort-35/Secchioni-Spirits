@@ -6,11 +6,10 @@ const factoryHTML = {
     return `
         <div id="welcome">
         <div id="logo"></div>
-        <h1>Welcome to Bangazon</h1>
+        <h1>Welcome to Bangazon!</h1>
         <div id="nav-container">
-        <a href="#" id="landingRegister">Register</a>
+        <button type="button" class="btn btn-outline-primary" id="landingRegister">Register</button>
         <a href="#" id="landingLogin">Log In</a>
-        <button type="button" class="btn btn-outline-primary">Primary</button>
         <div class="landingImage">
         <img src="../src/scripts/images/Bangazon_Illustration.png" alt="gradilogo" height="700" width="1000">
         </div>
@@ -61,6 +60,7 @@ const factoryHTML = {
         <h2>FRIENDS</h2>
         <img class = "chatIcon" src="../src/scripts/images/friends.png" alt="bangazonlogo" height="90" width="80">
         </div>
+        <img class = "newFeatureImage" src="../src/scripts/images/newfeature.png" alt="bangazonlogo" height="230" width="280">
         </section>
         <!--ENDS left-->
       </div>
@@ -77,9 +77,15 @@ const factoryHTML = {
             <h2>CHAT</h2>
             <img class = "chatIcon" src="../src/scripts/images/chat.png" alt="bangazonlogo" height="90" width="80">
             </div>
+<<<<<<< HEAD
             <article id="messageCardsContainer"></article>
             <article id="messageFormContainer"></article>
             <button id="add-message-btn" type="button">Add a New Message</button>
+=======
+            <article id="chatContainer"></article>
+            <article id="chatCardContainer"></article>
+            <button id="add-chat-btn" type="button"><i class="fas fa-plus-circle fa-1x"></i> Add a New Message</button>
+>>>>>>> origin
           </div>
 
           <div id="news">
@@ -156,8 +162,11 @@ const factoryHTML = {
       </div>
       <div class="modal-body">
       <fieldset id="events_HTML_Form">
-      <input id="events_title" type="text" placeholder="Title">
-      <input id="events_location" type="text" placeholder="Location">
+      <label for="Events">Event Name</label>
+      <input id="events_title" type="text" placeholder="Title"><br>
+      <label for="location">Event Location</label>
+      <input id="events_location" type="text" placeholder="Location"><br>
+      <label for="Date">Date of Event</label>
       <input id="events_date" type="date">
   </fieldset>
       </div>
@@ -223,7 +232,7 @@ const factoryHTML = {
     </main>
 
     <footer>
-      <p>Footer Copyright</p>
+      <h4>Secchioni Spirits | NSS Cohort 35 2018-2019</h4>
       <button id="logout" type="button"><i class="fas fa-sign-out-alt"></i>Log Out</button>
     </footer>
     </div>
